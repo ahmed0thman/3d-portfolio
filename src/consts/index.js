@@ -262,14 +262,14 @@ export const calculateSizes = (isSmall, isMobile, isTablet) => {
       ? [5.5, -6, 0]
       : [9, -5.5, 0],
     reactLogoPosition: isSmall
-      ? [2.5, 4, 0]
+      ? [2.5, 2.5, 0]
       : isMobile
       ? [3.4, 4, 0]
       : isTablet
       ? [5.5, 3, 0]
       : [9, 4, 0],
     ringPosition: isSmall
-      ? [-3, 3, 0]
+      ? [-3, 2.5, 0]
       : isMobile
       ? [-4, 3, 0]
       : isTablet
