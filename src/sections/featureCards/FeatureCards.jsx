@@ -13,7 +13,7 @@ const FeatureCards = () => {
         opacity: 0,
         transformOrigin: "left left",
         duration: 1,
-        delay: (index + 1) * 0.5,
+        delay: (index + 1) * 0.4,
         ease: "power2.inOut",
         scrollTrigger: {
           trigger: card,
