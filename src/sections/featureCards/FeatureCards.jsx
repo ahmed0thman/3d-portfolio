@@ -1,10 +1,33 @@
 import React from "react";
 import { abilities } from "../../consts";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+gsap.registerPlugin(ScrollTrigger);
 
 const FeatureCards = () => {
+  useGSAP(function () {
+    const cards = gsap.utils.toArray(".feature-card").forEach((card, index) => {
+      gsap.from(card, {
+        xPercent: -100 * (index + 1),
+        opacity: 0,
+        transformOrigin: "left left",
+        duration: 1,
+        delay: (index + 1) * 0.5,
+        ease: "power2.inOut",
+        scrollTrigger: {
+          trigger: card,
+          start: "top bottom-=10",
+        },
+      });
+    });
+  }, []);
   return (
-    <div className="w-full c-space my-20">
-      <div className="mx-auto grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+    <section className="w-full c-space my-20">
+      <div
+        id="features"
+        className="mx-auto grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6"
+      >
         {abilities.map(({ imgPath, title, desc, themeColor }, index) => (
           <div
             className="feature-card rounded-xl"
@@ -26,7 +49,7 @@ const FeatureCards = () => {
           </div>
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 

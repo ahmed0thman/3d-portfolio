@@ -33,11 +33,11 @@ const About = () => {
         {
           opacity: 1,
           y: 0,
-          duration: 1,
+          duration: 0.7,
           delay: (index + 1) * 0.5,
           scrollTrigger: {
             trigger: grid,
-            start: "top bottom-=100",
+            start: "top bottom-=150",
           },
         }
       );
@@ -78,14 +78,14 @@ const About = () => {
     }
   }
   return (
-    <div className="c-space my-20">
+    <section id="about" className="c-space my-20">
       <div
         ref={aboutRef}
         id="about"
-        className="grid xl:grid-cols-3 xl:grid-rows-9 md:grid-cols-2 grid-cols-1 gap-5 h-full"
+        className="grid lg:grid-cols-3 xl:grid-rows-13 md:grid-cols-2 grid-cols-1 gap-5 h-full"
         onMouseMove={handleMouseMove}
       >
-        <div ref={grid1Ref} className="col-span-1 xl:row-span-5">
+        <div ref={grid1Ref} className="col-span-1 lg:row-span-7 order-1">
           <div className="grid-container">
             <img
               src="/imgs/grid-me.png"
@@ -105,7 +105,7 @@ const About = () => {
           </div>
         </div>
 
-        <div ref={grid2Ref} className="col-span-1 xl:row-span-5">
+        <div ref={grid2Ref} className="col-span-1 lg:row-span-7 order-2">
           <div className="grid-container">
             <img
               src="/imgs/grid-student.png"
@@ -138,7 +138,7 @@ const About = () => {
 
         <div
           ref={grid3Ref}
-          className="col-span-1 md:col-span-2 xl:col-span-1 xl:row-span-6"
+          className="col-span-1  lg:col-span-1 lg:row-span-10 order-3"
         >
           <div className="grid-container">
             <div className="rounded-3xl w-full sm:h-[326px] h-fit flex justify-center items-center">
@@ -178,7 +178,10 @@ const About = () => {
           </div>
         </div>
 
-        <div ref={grid4Ref} className="md:col-span-2 xl:row-span-4">
+        <div
+          ref={grid4Ref}
+          className="md:col-span-2 lg:row-span-6 order-4 sm:order-last lg:order-4"
+        >
           <div className="grid-container">
             <img
               src="/assets/grid3.png"
@@ -199,22 +202,22 @@ const About = () => {
 
         <div
           ref={grid5Ref}
-          className="col-span-1 md:col-span-2 xl:col-span-1 xl:row-span-3"
+          className="col-span-1  lg:col-span-1 lg:row-span-3 order-last sm:order-4 lg:order-last"
         >
           <div className="grid-container">
             <img
               src="/assets/grid4.png"
               alt=""
-              className="w-full md:h-[126px] sm:h-[276px] h-fit object-contain xl:object-cover sm:object-top"
+              className="w-full h-full object-cover xl:object-cover sm:object-top"
             />
-            <div className="space-y-4 mt-14">
+            <div className="space-y-4 mt-auto">
               <p className="grid-subtext text-center">Contact Me</p>
               <div className="copy-container" onClick={handleCopy}>
                 <img
                   src={hasCopied ? "/assets/tick.svg" : "assets/copy.svg"}
                   alt="copy email"
                 />
-                <p className="lg:text-xl md:text-lg font-medium text-gray_gradient text-white">
+                <p className="xl:text-xl lg:text-base md:text-base font-medium text-gray_gradient text-white">
                   {hasCopied ? "Email Copied!" : "ahmedothman.code@gmail.com"}
                 </p>
               </div>
@@ -222,7 +225,7 @@ const About = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

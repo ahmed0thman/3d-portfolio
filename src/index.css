@@ -54,6 +54,19 @@ body {
     @apply relative inline-flex rounded-full h-3 w-3 bg-green-500;
   }
 
+  .section-padding {
+    @apply px-5 md:px-10 md:mt-40 mt-20;
+  }
+
+  .hero-badge {
+    @apply flex items-center content-center gap-2 py-2 px-4 rounded-full w-fit text-sm md:text-base text-nowrap;
+    background: #282732;
+
+    box-shadow: 0px 1px 2px 0px rgba(38, 68, 98, 0.06),
+      0px 20px 32px -12px rgba(12, 37, 62, 0.08);
+    backdrop-filter: blur(10px);
+  }
+
   /* hero section */
   .hero_tag {
     @apply text-center xl:text-3xl md:text-3xl sm:text-2xl text-xl font-generalsans font-black !leading-normal;
@@ -323,6 +336,61 @@ body {
     backdrop-filter: blur(25px);
     background-color: rgba(14, 14, 16, 0.85);
     z-index: 2;
+  }
+
+  /* work experience section */
+
+  .timeline-wrapper {
+    @apply absolute top-0  md:left-10 left-5 h-full flex justify-center;
+  }
+
+  .timeline {
+    @apply absolute z-30 h-[110%] -top-10 w-14 md:w-28;
+
+    background-color: #010103;
+  }
+
+  .timeline-logo {
+    @apply md:size-20 size-10 flex-none rounded-full flex justify-center items-center border border-black-100 bg-black-100;
+  }
+
+  .exp-card-wrapper {
+    @apply flex flex-col-reverse xl:flex-row xl:gap-20 gap-10 justify-between;
+  }
+  .gradient-line {
+    width: 2px;
+    background: linear-gradient(
+      0deg,
+      rgba(69, 222, 196, 0) 0%,
+      #62e0ff 25%,
+      #52aeff 37.51%,
+      #fd5c79 62.83%,
+      #6d45ce 92.91%
+    );
+  }
+
+  .gradient-edge {
+    @apply w-36 h-full absolute bottom-0 z-20;
+  }
+
+  .tech-card-animated-bg {
+    @apply absolute left-0 bottom-[-100%] w-full h-full bg-[#2D3240] group-hover:bottom-0 transition-all duration-700;
+  }
+
+  .tech-card-content {
+    @apply flex flex-col md:justify-center items-center xl:gap-5 xl:h-[50vh] overflow-hidden relative z-10 group-hover:cursor-grab;
+
+    & p {
+      @apply text-lg 2xl:text-2xl pb-5 xl:pb-0 font-semibold text-white-50 text-center;
+    }
+  }
+
+  .tech-grid {
+    @apply grid xl:grid-cols-5 md:grid-cols-3 grid-cols-1 xl:gap-16 md:gap-10 gap-5 mt-16;
+  }
+
+  .tech-icon-wrapper {
+    @apply flex justify-center items-center w-52 h-60 relative;
   }
 
   /* projects section  */
