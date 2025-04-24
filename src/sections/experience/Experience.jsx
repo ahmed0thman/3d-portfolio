@@ -53,8 +53,8 @@ const Experience = () => {
         <div className="mt-32 relative">
           <div className="relative z-50 xl:space-y-32 space-y-10">
             {expCards.map((card) => (
-              <div key={card.title} className="exp-card-wrapper">
-                <div className="flex items-start">
+              <div key={card.title}>
+                <div>
                   <div className="timeline-wrapper ">
                     <div className="timeline" />
                     <div className="gradient-line w-1 h-full"></div>
@@ -63,7 +63,7 @@ const Experience = () => {
                     <div className="timeline-logo">
                       <img src={card.logoPath} alt="logo" />
                     </div>
-                    <div>
+                    <div className="work-canvas px-8 py-5 flex-grow">
                       <h1 className="font-semibold text-2xl text-white-800">
                         {card.title}
                       </h1>
