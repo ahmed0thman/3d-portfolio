@@ -15,8 +15,9 @@ const Experience = () => {
         trigger: ".timeline",
         start: "top 80%",
         end: "70% center",
+        scrub: true,
         onUpdate: function (self) {
-          gsap.to(".timeline", {
+          gsap.set(".timeline", {
             scaleY: 1 - self.progress,
           });
         },
@@ -35,6 +36,7 @@ const Experience = () => {
         },
       });
     });
+    ScrollTrigger.refresh();
   }, []);
   return (
     <section

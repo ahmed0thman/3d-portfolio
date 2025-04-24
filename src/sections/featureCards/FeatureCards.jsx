@@ -21,6 +21,7 @@ const FeatureCards = () => {
         },
       });
     });
+    ScrollTrigger.refresh();
   }, []);
   return (
     <section className="w-full c-space my-20">
