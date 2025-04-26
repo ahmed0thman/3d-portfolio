@@ -15,12 +15,17 @@ export const navLinks = [
     href: "#experience",
   },
   {
-    id: 3,
+    id: 4,
+    name: "Skills",
+    href: "#skills",
+  },
+  {
+    id: 5,
     name: "Work",
     href: "#work",
   },
   {
-    id: 4,
+    id: 6,
     name: "Contact",
     href: "#contact",
   },
@@ -74,6 +79,9 @@ export const myProjects = [
       backgroundColor: "#2A1816",
       border: "0.2px solid #36201D",
       boxShadow: "0px 0px 60px 0px #AA3C304D",
+      themeColor1: "#AA3C304D",
+      themeColor2: "#f8775abb",
+      themeColor3: "#36201D",
     },
     spotlight: "/assets/spotlight1.png",
     tags: [
@@ -111,6 +119,9 @@ export const myProjects = [
       backgroundColor: "#13202F",
       border: "0.2px solid #17293E",
       boxShadow: "0px 0px 60px 0px #2F6DB54D",
+      themeColor1: "#2F6DB585",
+      themeColor2: "#13204F",
+      themeColor3: "#17293E",
     },
     spotlight: "/assets/spotlight2.png",
     tags: [
@@ -150,6 +161,9 @@ export const myProjects = [
         "linear-gradient(0deg, #60F5A150, #60F5A150), linear-gradient(180deg, rgba(255, 255, 255, 0.9) 0%, rgba(208, 213, 221, 0.8) 100%)",
       border: "0.2px solid rgba(208, 213, 221, 1)",
       boxShadow: "0px 0px 60px 0px rgba(35, 131, 96, 0.3)",
+      themeColor1: "#60F5A150",
+      themeColor2: "#aadbc230",
+      themeColor3: "#4bc78350",
     },
     spotlight: "/assets/spotlight3.png",
     tags: [
@@ -187,6 +201,9 @@ export const myProjects = [
       backgroundColor: "#0E1F38",
       border: "0.2px solid #0E2D58",
       boxShadow: "0px 0px 60px 0px #2F67B64D",
+      themeColor1: "#2F67B64D",
+      themeColor2: "#0E1F38",
+      themeColor3: "#0E2D58",
     },
     spotlight: "/assets/spotlight4.png",
     tags: [
@@ -212,43 +229,43 @@ export const myProjects = [
       },
     ],
   },
-  {
-    title: "Imaginify - AI Photo Manipulation App",
-    desc: "Imaginify is a groundbreaking Software-as-a-Service application that empowers users to create stunning photo manipulations using AI technology. With features like AI-driven image editing, a payments system, and a credits-based model.",
-    subdesc:
-      "Built with Next.js 14, Cloudinary AI, Clerk, and Stripe, Imaginify combines cutting-edge technology with a user-centric approach. It can be turned into a side income or even a full-fledged business.",
-    href: "https://www.youtube.com/watch?v=Ahwoks_dawU",
-    texture: "/textures/project/project5.mp4",
-    logo: "/assets/project-logo5.png",
-    logoStyle: {
-      backgroundColor: "#1C1A43",
-      border: "0.2px solid #252262",
-      boxShadow: "0px 0px 60px 0px #635BFF4D",
-    },
-    spotlight: "/assets/spotlight5.png",
-    tags: [
-      {
-        id: 1,
-        name: "React.js",
-        path: "/assets/react.svg",
-      },
-      {
-        id: 2,
-        name: "TailwindCSS",
-        path: "assets/tailwindcss.png",
-      },
-      {
-        id: 3,
-        name: "TypeScript",
-        path: "/assets/typescript.png",
-      },
-      {
-        id: 4,
-        name: "Framer Motion",
-        path: "/assets/framer.png",
-      },
-    ],
-  },
+  // {
+  //   title: "Imaginify - AI Photo Manipulation App",
+  //   desc: "Imaginify is a groundbreaking Software-as-a-Service application that empowers users to create stunning photo manipulations using AI technology. With features like AI-driven image editing, a payments system, and a credits-based model.",
+  //   subdesc:
+  //     "Built with Next.js 14, Cloudinary AI, Clerk, and Stripe, Imaginify combines cutting-edge technology with a user-centric approach. It can be turned into a side income or even a full-fledged business.",
+  //   href: "https://www.youtube.com/watch?v=Ahwoks_dawU",
+  //   texture: "/textures/project/project5.mp4",
+  //   logo: "/assets/project-logo5.png",
+  //   logoStyle: {
+  //     backgroundColor: "#1C1A43",
+  //     border: "0.2px solid #252262",
+  //     boxShadow: "0px 0px 60px 0px #635BFF4D",
+  //   },
+  //   spotlight: "/assets/spotlight5.png",
+  //   tags: [
+  //     {
+  //       id: 1,
+  //       name: "React.js",
+  //       path: "/assets/react.svg",
+  //     },
+  //     {
+  //       id: 2,
+  //       name: "TailwindCSS",
+  //       path: "assets/tailwindcss.png",
+  //     },
+  //     {
+  //       id: 3,
+  //       name: "TypeScript",
+  //       path: "/assets/typescript.png",
+  //     },
+  //     {
+  //       id: 4,
+  //       name: "Framer Motion",
+  //       path: "/assets/framer.png",
+  //     },
+  //   ],
+  // },
 ];
 
 export const calculateSizes = (isSmall, isMobile, isTablet) => {
@@ -376,5 +393,44 @@ export const abilities = [
     title: "On-Time Delivery",
     desc: "Making sure projects are completed on schedule, with quality & attention to detail.",
     themeColor: "#f587ff",
+  },
+];
+
+export const techStackIcons = [
+  {
+    name: "React.js",
+    modelPath: "/models/react_logo-transformed.glb",
+    scale: 1,
+    rotation: [0.1, 0.5, 0],
+  },
+  {
+    name: "React Query",
+    modelPath: "/models/query.glb",
+    scale: 1.8,
+    rotation: [-0.2, -0.64, 0],
+  },
+  {
+    name: "Redux",
+    modelPath: "/models/redux.glb",
+    scale: 2,
+    rotation: [0, 0, 0],
+  },
+  {
+    name: "Tailwind CSS",
+    modelPath: "/models/tailwind.glb",
+    scale: 2.3,
+    rotation: [2.8, 2.95, 2.75],
+  },
+  {
+    name: "Three.js",
+    modelPath: "/models/threejs.glb",
+    scale: 0.05,
+    rotation: [2.35, -2.65, 1.35],
+  },
+  {
+    name: "Git",
+    modelPath: "/models/git-svg-transformed.glb",
+    scale: 0.05,
+    rotation: [0, -2.8, 0],
   },
 ];

@@ -40,9 +40,9 @@ const Hero = () => {
             <span className="ms-[-8rem] xl:ms-[-10rem]">Shaping</span>
             <span className="slide">
               <span className="wrapper">
-                {words.map((word) => (
+                {words.map((word, key) => (
                   <span
-                    key={word.text}
+                    key={`${key}-${word.text}`}
                     className="flex items-center md:gap-3 gap-1 pb-2"
                   >
                     <img
@@ -87,7 +87,7 @@ const Hero = () => {
       </div>
 
       <div className="absolute bottom-10 left-0 right-0 w-full z-10 c-space ">
-        <a href="#contact" className="w-fit">
+        <a href="#about" className="w-fit">
           <Button
             name="let's work together"
             isBeam

@@ -29,18 +29,19 @@ const Experience = () => {
       },
     });
 
-    gsap.utils.toArray(".expText").forEach((item) => {
-      gsap.from(item, {
-        x: 0,
-        opacity: 0,
-        duration: 1.5,
-        ease: "power2.inOut",
-        scrollTrigger: {
-          trigger: item,
-          start: "top 80%",
-        },
-      });
+    // gsap.utils.toArray(".expText").forEach((item) => {
+    //   console.log(item);
+    gsap.from(".expText", {
+      x: 0,
+      opacity: 0,
+      duration: 1.5,
+      ease: "power2.inOut",
+      scrollTrigger: {
+        trigger: ".expText",
+        start: "top 80%",
+      },
     });
+    // });
     ScrollTrigger.refresh();
   }, []);
   return (
@@ -56,7 +57,7 @@ const Experience = () => {
         />
 
         <div className="mt-32 relative flex gap-2">
-          <div className="avatar hidden lg:block">
+          <div className="avatar hidden">
             <Canvas>
               <ambientLight intensity={7} />
               <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
@@ -67,7 +68,7 @@ const Experience = () => {
               </Suspense>
             </Canvas>
           </div>
-          <div className="relative h-fit z-50 xl:space-y-8 space-y-3">
+          <div className="relative flex-grow h-fit z-50 xl:space-y-8 space-y-3">
             {expCards.map((card) => (
               <div key={card.title}>
                 <div className="timeline-wrapper ">

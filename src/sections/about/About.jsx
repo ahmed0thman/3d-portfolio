@@ -113,21 +113,21 @@ const About = () => {
               className="w-full sm:w-[276px] h-fit object-contain mx-auto"
             />
             <div className="flex flex-col">
-              <p className="grid-headtext capitalize">
+              <div className="grid-headtext capitalize">
                 Cairo University
                 <p className="text-white-700 text-sm font-light italic">
                   2021 - present
                 </p>
-              </p>
+              </div>
               <p className="grid-subtext mb-3">
                 Master student at Cairo University, Faculty of Computer Science.
               </p>
-              <p className="grid-headtext capitalize">
+              <div className="grid-headtext capitalize">
                 M.E.T Academy
                 <p className="text-white-700 text-sm font-light italic">
                   2017 - 2021
                 </p>
-              </p>
+              </div>
               <p className="grid-subtext">
                 Bachelor of Computer Science from M.E.T Academy, Masnoura,
                 Egypt.
