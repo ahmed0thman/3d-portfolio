@@ -91,7 +91,13 @@ const Contact = () => {
     <section className="c-space my-20" id="contact">
       {alert.show && <Alert {...alert} />}
 
-      <div className="w-full work-canvas p-10 relative overflow-hidden">
+      <div
+        className="w-full work-canvas sm:!rounded-3xl p-4 sm:p-10 relative overflow-hidden"
+        style={{
+          boxShadow:
+            "-4px -2px 6px rgba(255,255,255,0.2),3px 4px 6px rgba(255,255,255,0.12)",
+        }}
+      >
         <div
           className="absolute top-0 left-0 w-full h-12"
           style={{
@@ -100,19 +106,19 @@ const Contact = () => {
           }}
         >
           <span
-            className="h-3 w-3 rounded-full bg-red-500 absolute top-4 start-4 z-10"
+            className="h-3 w-3 rounded-full bg-red-500 absolute top-4 start-6 z-10"
             style={{ boxShadow: "0 0 8px 2px rgba(255,0,0,.85)" }}
           ></span>
           <span
-            className="h-3 w-3 rounded-full bg-[#fff700] absolute top-4 start-10 z-10"
+            className="h-3 w-3 rounded-full bg-[#fff700] absolute top-4 start-12 z-10"
             style={{ boxShadow: "0 0 8px 1px #fff700d8" }}
           ></span>
           <span
-            className="h-3 w-3 rounded-full bg-[#00b120] absolute top-4 start-16 z-10"
+            className="h-3 w-3 rounded-full bg-[#00b120] absolute top-4 start-[4.5rem] z-10"
             style={{ boxShadow: "0 0 8px 2px rgb(0, 177, 32, .85)" }}
           ></span>
         </div>
-        <div className="mt-24 ">
+        <div className="mt-16 sm:mt-24 ">
           <h3 className="head-text">Let's talk</h3>
           <p className="text-lg text-white-600 mt-3">
             Whether you’re looking to build a new website, improve your existing
@@ -122,7 +128,7 @@ const Contact = () => {
           <form
             ref={formRef}
             onSubmit={handleSubmit}
-            className="mt-12 flex flex-col space-y-7"
+            className="mt-8 sm:mt-12 flex flex-col space-y-4 sm:space-y-7"
           >
             <label className="space-y-3">
               <span className="field-label">Full Name</span>
@@ -164,7 +170,7 @@ const Contact = () => {
             </label>
 
             <button
-              className="field-btn self-end"
+              className="field-btn sm:self-end"
               type="submit"
               disabled={loading}
             >
