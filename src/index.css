@@ -457,10 +457,10 @@ body {
     &::before {
       content: "";
       position: absolute;
-      top: -200%;
-      left: -200%;
-      width: 400%;
-      height: 400%;
+      top: -400%;
+      left: -400%;
+      width: 800%;
+      height: 800%;
       background-image: conic-gradient(
         from 90deg at 50% 50%,
         var(--theme-color-1) 0,
