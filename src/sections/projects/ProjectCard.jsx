@@ -9,7 +9,7 @@ const ProjectCard = ({ currentProject, index }) => {
       gsap.fromTo(
         projRef.current,
         {
-          x: index % 2 === 0 ? -200 : 200,
+          x: index % 2 === 0 ? -100 : 100,
           opacity: 0,
         },
         {

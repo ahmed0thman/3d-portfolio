@@ -3,6 +3,8 @@ import { useRef, useState } from "react";
 
 import useAlert from "./useAlert";
 import Alert from "./Alert";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 
 const Contact = () => {
   // service_1caqvgd
@@ -67,6 +69,23 @@ const Contact = () => {
         }
       );
   };
+
+  useGSAP(function () {
+    gsap.fromTo(
+      "#contact",
+      { opacity: 0, zoom: 0 },
+      {
+        opacity: 1,
+        zoom: 0,
+        duration: 1.3,
+        ease: "sine.in",
+        scrollTrigger: {
+          trigger: "#contact",
+          start: "top center",
+        },
+      }
+    );
+  }, []);
 
   return (
     <section className="c-space my-20" id="contact">
