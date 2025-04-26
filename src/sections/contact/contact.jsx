@@ -72,14 +72,28 @@ const Contact = () => {
     <section className="c-space my-20" id="contact">
       {alert.show && <Alert {...alert} />}
 
-      <div className="relative min-h-screen flex items-center justify-center flex-col">
-        <img
-          src="/assets/terminal.png"
-          alt="terminal-bg"
-          className="absolute inset-0 min-h-screen"
-        />
-
-        <div className="contact-container">
+      <div className="w-full work-canvas p-10 relative overflow-hidden">
+        <div
+          className="absolute top-0 left-0 w-full h-12"
+          style={{
+            background:
+              "linear-gradient(to left, #282828, #333, #868686, #333, #282828)",
+          }}
+        >
+          <span
+            className="h-3 w-3 rounded-full bg-red-500 absolute top-4 start-4 z-10"
+            style={{ boxShadow: "0 0 8px 2px rgba(255,0,0,.85)" }}
+          ></span>
+          <span
+            className="h-3 w-3 rounded-full bg-[#fff700] absolute top-4 start-10 z-10"
+            style={{ boxShadow: "0 0 8px 1px #fff700d8" }}
+          ></span>
+          <span
+            className="h-3 w-3 rounded-full bg-[#00b120] absolute top-4 start-16 z-10"
+            style={{ boxShadow: "0 0 8px 2px rgb(0, 177, 32, .85)" }}
+          ></span>
+        </div>
+        <div className="mt-24 ">
           <h3 className="head-text">Let's talk</h3>
           <p className="text-lg text-white-600 mt-3">
             Whether you’re looking to build a new website, improve your existing
@@ -130,7 +144,11 @@ const Contact = () => {
               />
             </label>
 
-            <button className="field-btn" type="submit" disabled={loading}>
+            <button
+              className="field-btn self-end"
+              type="submit"
+              disabled={loading}
+            >
               {loading ? "Sending..." : "Send Message"}
 
               <img
