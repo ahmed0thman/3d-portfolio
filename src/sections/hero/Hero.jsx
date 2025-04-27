@@ -97,7 +97,7 @@ const Hero = () => {
           <img
             src="/imgs/bg-hero.jpg"
             alt=""
-            className="absolute inset-0 h-screen w-[105%] object-cover -z-20"
+            className="absolute inset-0 h-screen w-full object-cover -z-20"
           />
           <span className="hero-overlay absolute inset-0 h-screen w-[105%]  -z-10"></span>
         </div>
