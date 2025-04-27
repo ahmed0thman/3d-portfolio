@@ -69,22 +69,20 @@ const Contact = () => {
   };
 
   useGSAP(function () {
-    if (isPc) {
-      gsap.fromTo(
-        "#contact",
-        { opacity: 0, zoom: 0 },
-        {
-          opacity: 1,
-          zoom: 0,
-          duration: 1.3,
-          ease: "sine.in",
-          scrollTrigger: {
-            trigger: "#contact",
-            start: "top center",
-          },
-        }
-      );
-    }
+    gsap.fromTo(
+      "#contact",
+      { opacity: 0, zoom: 0 },
+      {
+        opacity: 1,
+        zoom: 0,
+        duration: 1.3,
+        ease: "sine.in",
+        scrollTrigger: {
+          trigger: "#contact",
+          start: "top center",
+        },
+      }
+    );
   }, []);
 
   return (

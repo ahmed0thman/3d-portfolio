@@ -13,11 +13,13 @@ import HeroCamera from "../../components/HeroCamera";
 import Button from "../../components/Button";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import { useWindowSize } from "../../contexts/WindowSizeProvider";
 
 const Hero = () => {
   const isSmall = useMediaQuery({ maxWidth: 440 });
   const isMobile = useMediaQuery({ minWidth: 441, maxWidth: 768 });
   const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1024 });
+  const isPC = useWindowSize();
 
   const sized = calculateSizes(isSmall, isMobile, isTablet);
 
@@ -29,15 +31,17 @@ const Hero = () => {
     );
   });
   return (
-    <section className="min-h-screen w-full flex flex-col">
-      <div className="w-full mx-auto flex flex-col sm:mt-[112px] mt-20 c-space gap-6">
-        <p className="sm:text-2xl text-1xl font-medium text-white text-center font-generalsans">
-          <span className="mx-1">Welcome, to my Portfolio</span>
+    <section className="min-h-screen w-full flex flex-col mt-[120px] lg:mt-0">
+      <div className="w-full mx-auto flex flex-col sm:mt-[112px] mt-20 c-space gap-3 md:gap-6">
+        <p className="sm:text-xl text-xs font-medium text-white-800 text-center font-generalsans">
+          <span className="mx-1 uppercase">
+            Dynamic Web Magic with React.js
+          </span>
           <span className="waving-hand">👋</span>
         </p>
         <p className="hero_tag hero-layout space-y-2">
           <span className="block text-gray-gradient">
-            <span className="ms-[-8rem] xl:ms-[-10rem]">Shaping</span>
+            <span className=" sm:ms-[-10rem]">Shaping</span>
             <span className="slide">
               <span className="wrapper">
                 {words.map((word, key) => (
@@ -48,7 +52,7 @@ const Hero = () => {
                     <img
                       src={word.imgPath}
                       alt={word.text}
-                      className="xl:size-12 md:size-10 size-7 md:p-2 p-1 rounded-full bg-gray-gradient"
+                      className="xl:size-12 md:size-10 size-7 md:p-2 p-1 rounded-full bg-gray-gradient "
                     />
                     <span className="text-gray-gradient capitalize">
                       {word.text}
@@ -63,30 +67,46 @@ const Hero = () => {
           </span>
         </p>
       </div>
-      <div className="w-full h-full absolute flex-grow inset-0">
-        <Canvas className="w-full h-full flex-grow">
-          <Suspense fallback={<CanvasLoader />}>
-            <PerspectiveCamera makeDefault position={[0, 0, 18]} />
-            <HeroCamera isMobile={isMobile || isSmall}>
-              <HackerRoom
-                scale={sized.deskScale}
-                position={sized.deskPosition}
-                rotation={[0, -Math.PI, 0]}
-              />
-            </HeroCamera>
-            <group>
-              <Target position={sized.targetPosition} />
-              <ReactLogo position={sized.reactLogoPosition} />
-              <Cube position={sized.cubePosition} />
-              <Rings position={sized.ringPosition} />
-            </group>
-            <ambientLight intensity={1} />
-            <directionalLight position={[10, 10, 10]} intensity={0.5} />
-          </Suspense>
-        </Canvas>
-      </div>
+      {isPC && (
+        <div className="w-full h-full absolute flex-grow inset-0">
+          <Canvas className="w-full h-full flex-grow">
+            <Suspense fallback={<CanvasLoader />}>
+              <PerspectiveCamera makeDefault position={[0, 0, 18]} />
+              <HeroCamera isMobile={isMobile || isSmall}>
+                <HackerRoom
+                  scale={sized.deskScale}
+                  position={sized.deskPosition}
+                  rotation={[0, -Math.PI, 0]}
+                />
+              </HeroCamera>
+              <group>
+                <Target position={sized.targetPosition} />
+                <ReactLogo position={sized.reactLogoPosition} />
+                <Cube position={sized.cubePosition} />
+                <Rings position={sized.ringPosition} />
+              </group>
+              <ambientLight intensity={1} />
+              <directionalLight position={[10, 10, 10]} intensity={0.5} />
+            </Suspense>
+          </Canvas>
+        </div>
+      )}
 
-      <div className="absolute bottom-10 left-0 right-0 w-full z-10 c-space ">
+      {!isPC && (
+        <div className="">
+          <img
+            src="/imgs/bg-hero.jpg"
+            alt=""
+            className="absolute inset-0 h-screen w-[105%] object-cover -z-20"
+          />
+          <span className="hero-overlay absolute inset-0 h-screen w-[105%]  -z-10"></span>
+        </div>
+      )}
+
+      <div className="absolute bottom-16 lg:bottom-10 left-0 right-0 w-full z-10 c-space ">
+        <p className="text-center md:tracking-wider mb-8 text-sm md:text-lg lg:hidden text-white-600">
+          Hi, I'm Ahmed, a React.js Developer based in Egypt.
+        </p>
         <a href="#about" className="w-fit">
           <Button
             name="let's work together"

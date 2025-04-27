@@ -7,7 +7,6 @@ const ProjectCard = ({ currentProject, index }) => {
   const isPc = useWindowSize();
   const projRef = useRef();
   useGSAP(function () {
-    if (!isPc) return;
     if (projRef.current) {
       gsap.fromTo(
         projRef.current,

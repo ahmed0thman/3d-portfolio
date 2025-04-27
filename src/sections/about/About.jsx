@@ -20,7 +20,6 @@ const About = () => {
   const isPc = useWindowSize();
 
   useGSAP(() => {
-    if (!isPc) return;
     const grids = [
       grid1Ref.current,
       grid2Ref.current,
@@ -81,7 +80,7 @@ const About = () => {
     }
   }
   return (
-    <section id="about" className="c-space my-20">
+    <section id="about" className="c-space lg:my-20">
       <div
         ref={aboutRef}
         id="about"

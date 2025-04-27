@@ -15,38 +15,36 @@ const Experience = () => {
   const isPc = useWindowSize();
 
   useGSAP(function () {
-    if (isPc) {
-      gsap.to(".timeline", {
-        transformOrigin: "bottom bottom",
-        ease: "power1.inOut",
-        duration: 1,
+    gsap.to(".timeline", {
+      transformOrigin: "bottom bottom",
+      ease: "power1.inOut",
+      duration: 1,
+      scrollTrigger: {
+        trigger: ".timeline",
+        start: "top 80%",
+        end: "70% center",
+        scrub: true,
+        onUpdate: function (self) {
+          gsap.set(".timeline", {
+            scaleY: 1 - self.progress,
+          });
+        },
+      },
+    });
+
+    gsap.utils.toArray(".expText").forEach((item) => {
+      gsap.from(item, {
+        x: 0,
+        opacity: 0,
+        duration: 1.5,
+        ease: "power2.inOut",
         scrollTrigger: {
-          trigger: ".timeline",
+          trigger: item,
           start: "top 80%",
-          end: "70% center",
-          scrub: true,
-          onUpdate: function (self) {
-            gsap.set(".timeline", {
-              scaleY: 1 - self.progress,
-            });
-          },
         },
       });
-
-      gsap.utils.toArray(".expText").forEach((item) => {
-        gsap.from(".expText", {
-          x: 0,
-          opacity: 0,
-          duration: 1.5,
-          ease: "power2.inOut",
-          scrollTrigger: {
-            trigger: ".expText",
-            start: "top 80%",
-          },
-        });
-      });
-      ScrollTrigger.refresh();
-    }
+    });
+    ScrollTrigger.refresh();
   }, []);
   return (
     <section
@@ -61,7 +59,7 @@ const Experience = () => {
         />
 
         <div className="mt-32 relative flex gap-2">
-          {/* <div className="avatar hidden">
+          {/* <div className="avatar">
             <Canvas>
               <ambientLight intensity={7} />
               <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />

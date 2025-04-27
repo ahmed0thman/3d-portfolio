@@ -9,7 +9,7 @@ const Navbar = () => {
     setIsMenuOpen((prev) => !prev);
   }
   return (
-    <header className="fixed top-0 left-0 right-0 z-[1000] bg-black/90">
+    <header className="fixed top-0 left-0 right-0 z-[1000] lg:bg-black/90 bg-black/50">
       <div className="max-w-7xl mx-auto">
         <div className="flex justify-between items-center py-5 mx-auto c-space">
           <a href="/" className="flex gap-1 items-center  logo">
@@ -24,7 +24,7 @@ const Navbar = () => {
             <img
               src={isMenuOpen ? "assets/close.svg" : "assets/menu.svg"}
               alt="toggle"
-              className="w-6 h-6"
+              className="w-6 h-6 me-4"
             />
           </button>
           <nav className="sm:flex hidden">
