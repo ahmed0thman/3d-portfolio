@@ -12,6 +12,7 @@ import WindowSizeProvider from "./contexts/windowSizeProvider";
 
 const App = () => {
   return (
+    // added window size provider
     <WindowSizeProvider>
       <main className="max-w-7xl mx-auto overflow-hidden">
         <Navbar />
