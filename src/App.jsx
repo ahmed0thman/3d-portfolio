@@ -9,6 +9,7 @@ import Projects from "./sections/projects/Projects";
 import Contact from "./sections/contact/contact";
 import Footer from "./sections/footer/Footer";
 import WindowSizeProvider from "./contexts/WindowSizeProvider";
+import LazySection from "./components/LazySection";
 
 const App = () => {
   return (
@@ -17,13 +18,27 @@ const App = () => {
       <main className="max-w-7xl mx-auto overflow-hidden">
         <Navbar />
         <Hero />
-        <About />
-        <FeatureCards />
-        <Experience />
-        <Skills />
-        <Projects />
-        <Contact />
-        <Footer />
+        <LazySection>
+          <About />
+        </LazySection>
+        <LazySection>
+          <FeatureCards />
+        </LazySection>
+        <LazySection>
+          <Experience />
+        </LazySection>
+        <LazySection>
+          <Skills />
+        </LazySection>
+        <LazySection>
+          <Projects />
+        </LazySection>
+        <LazySection>
+          <Contact />
+        </LazySection>
+        <LazySection>
+          <Footer />
+        </LazySection>
       </main>
     </WindowSizeProvider>
   );
