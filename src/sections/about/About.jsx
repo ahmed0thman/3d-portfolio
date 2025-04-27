@@ -55,6 +55,14 @@ const About = () => {
         { lat: 30.0444, lng: 31.2357, altitude: 1.8 }, // Decrease altitude for closer zoom
         1000 // Animation duration in milliseconds
       );
+      if (isPc) return;
+      const controls = globeRef.current.controls();
+      if (controls) {
+        controls.enableZoom = false; // Disable zoom
+        controls.enableRotate = false; // Disable rotation
+        controls.enablePan = false; // Disable panning
+        controls.enables = false;
+      }
     }
   }, []);
 
@@ -97,8 +105,8 @@ const About = () => {
             <div>
               <p className="grid-headtext">Hi, I'm Ahmed Othman</p>
               <p className="grid-subtext">
-                With over 5 years of experience in web development, I specialize
-                in Frontend development. I am passionate about creating
+                With 2+ years of experience in web development, I specialize in
+                Frontend development. I am passionate about creating
                 user-friendly and efficient web applications that meet the needs
                 of users and businesses alike. I have a strong background in
                 JavaScript, React, and other modern web technologies.
@@ -162,6 +170,9 @@ const About = () => {
                   },
                 ]}
                 labelSize={6}
+                enableZoom={false} // Disable zoom
+                enableRotate={false} // Disable rotation
+                enablePan={false}
               />
             </div>
             <div>
