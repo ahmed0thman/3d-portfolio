@@ -5,7 +5,7 @@ import { div } from "three/tsl";
 import SkillModel from "./SkillModel";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import { useWindowSize } from "../../contexts/windowSizeProvider";
+import { useWindowSize } from "../../contexts/WindowSizeProvider";
 
 const Skills = () => {
   const isPc = useWindowSize();

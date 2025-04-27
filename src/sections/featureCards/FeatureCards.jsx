@@ -3,7 +3,7 @@ import { abilities } from "../../consts";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-import { useWindowSize } from "../../contexts/windowSizeProvider";
+import { useWindowSize } from "../../contexts/WindowSizeProvider";
 gsap.registerPlugin(ScrollTrigger);
 
 const FeatureCards = () => {

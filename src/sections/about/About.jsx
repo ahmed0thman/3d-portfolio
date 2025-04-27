@@ -4,7 +4,7 @@ import Button from "../../components/Button";
 import { gsap } from "gsap/gsap-core";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
-import { useWindowSize } from "../../contexts/windowSizeProvider";
+import { useWindowSize } from "../../contexts/WindowSizeProvider";
 
 gsap.registerPlugin(ScrollTrigger);
 

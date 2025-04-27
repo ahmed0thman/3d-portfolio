@@ -8,7 +8,7 @@ import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import CanvasLoader from "../../components/CanvasLoader";
 import Developer from "./Developer";
-import { useWindowSize } from "../../contexts/windowSizeProvider";
+import { useWindowSize } from "../../contexts/WindowSizeProvider";
 gsap.registerPlugin(ScrollTrigger);
 
 const Experience = () => {

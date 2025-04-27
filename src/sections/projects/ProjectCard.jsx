@@ -1,7 +1,7 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import React, { useRef } from "react";
-import { useWindowSize } from "../../contexts/windowSizeProvider";
+import { useWindowSize } from "../../contexts/WindowSizeProvider";
 
 const ProjectCard = ({ currentProject, index }) => {
   const isPc = useWindowSize();

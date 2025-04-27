@@ -5,7 +5,7 @@ import useAlert from "./useAlert";
 import Alert from "./Alert";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import { useWindowSize } from "../../contexts/windowSizeProvider";
+import { useWindowSize } from "../../contexts/WindowSizeProvider";
 
 const Contact = () => {
   const formRef = useRef();
