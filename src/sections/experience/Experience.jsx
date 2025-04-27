@@ -32,20 +32,20 @@ const Experience = () => {
           },
         },
       });
+      gsap.utils.toArray(".expText").forEach((item) => {
+        gsap.from(item, {
+          x: 0,
+          opacity: 0,
+          duration: 1.5,
+          ease: "power2.inOut",
+          scrollTrigger: {
+            trigger: item,
+            start: "top 80%",
+          },
+        });
+      });
     }
 
-    gsap.utils.toArray(".expText").forEach((item) => {
-      gsap.from(item, {
-        x: 0,
-        opacity: 0,
-        duration: 1.5,
-        ease: "power2.inOut",
-        scrollTrigger: {
-          trigger: item,
-          start: "top 80%",
-        },
-      });
-    });
     ScrollTrigger.refresh();
   }, []);
   return (
