@@ -400,13 +400,13 @@ export const techStackIcons = [
   {
     name: "React.js",
     modelPath: "/models/react_logo-transformed.glb",
-    scale: 1,
+    scale: 0.8,
     rotation: [0.1, 0.5, 0],
   },
   {
     name: "React Query",
     modelPath: "/models/query.glb",
-    scale: 1.8,
+    scale: 1.5,
     rotation: [-0.2, -0.64, 0],
   },
   {
@@ -424,7 +424,7 @@ export const techStackIcons = [
   {
     name: "Three.js",
     modelPath: "/models/threejs.glb",
-    scale: 0.05,
+    scale: 0.04,
     rotation: [2.35, -2.65, 1.35],
   },
   {

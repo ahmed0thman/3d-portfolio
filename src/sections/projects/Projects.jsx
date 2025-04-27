@@ -9,7 +9,7 @@ const Projects = () => {
     <section id="work" className="c-space my-20">
       <TitleHeader
         subtitle={"My Recent Work"}
-        title={"A small selection of recent projects"}
+        title={"A selection of recent projects"}
         icon={"👨‍💻"}
       />
 

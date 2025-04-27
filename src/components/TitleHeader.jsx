@@ -8,7 +8,9 @@ const TitleHeader = ({ title, subtitle, icon }) => {
         <p className="text-white">{subtitle}</p>
       </div>
 
-      <div className="hero_tag text-gray-gradient capitalize">{title}</div>
+      <div className="hero_tag !text-xl lg:!text-3xl text-gray-gradient capitalize">
+        {title}
+      </div>
     </div>
   );
 };
