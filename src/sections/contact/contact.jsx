@@ -97,22 +97,22 @@ const Contact = () => {
         }}
       >
         <div
-          className="absolute top-0 left-0 w-full h-12"
+          className="absolute top-0 left-0 w-full h-6 md:h-12"
           style={{
             background:
               "linear-gradient(to left, #282828, #333, #868686, #333, #282828)",
           }}
         >
           <span
-            className="h-3 w-3 rounded-full bg-red-500 absolute top-4 start-6 z-10"
+            className="h-2 w-2 md:h-3 md:w-3 rounded-full bg-red-500 absolute top-2 md:top-4 start-6 z-10"
             style={{ boxShadow: "0 0 8px 2px rgba(255,0,0,.85)" }}
           ></span>
           <span
-            className="h-3 w-3 rounded-full bg-[#fff700] absolute top-4 start-12 z-10"
+            className="h-2 w-2 md:h-3 md:w-3 rounded-full bg-[#fff700] absolute top-2 md:top-4 start-12 z-10"
             style={{ boxShadow: "0 0 8px 1px #fff700d8" }}
           ></span>
           <span
-            className="h-3 w-3 rounded-full bg-[#00b120] absolute top-4 start-[4.5rem] z-10"
+            className="h-2 w-2 md:h-3 md:w-3 rounded-full bg-[#00b120] absolute top-2 md:top-4 start-[4.5rem] z-10"
             style={{ boxShadow: "0 0 8px 2px rgb(0, 177, 32, .85)" }}
           ></span>
         </div>

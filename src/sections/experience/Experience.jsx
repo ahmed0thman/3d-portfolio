@@ -74,7 +74,7 @@ const Experience = () => {
             {expCards.map((card) => (
               <div key={card.title}>
                 <div className="timeline-wrapper ">
-                  <div className={`timeline ${!isPc && "!hidden"}`} />
+                  <div className={`timeline`} />
                   <div className="gradient-line w-1 h-full"></div>
                 </div>
                 <div className="expText flex xl:gap-12 md:gap-18 gap-5 relative z-20">

@@ -175,7 +175,9 @@ const About = () => {
                 schedules and can adapt to different time zones to ensure
                 seamless collaboration.
               </p>
-              <Button name="Contact Me" isBeam className="w-full mt-8" />
+              <a href="#contact">
+                <Button name="Contact Me" isBeam className="w-full mt-8" />
+              </a>
             </div>
           </div>
         </div>
