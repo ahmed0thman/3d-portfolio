@@ -15,36 +15,37 @@ const Experience = () => {
   const isPc = useWindowSize();
 
   useGSAP(function () {
-    if (isPc) {
-      gsap.to(".timeline", {
-        transformOrigin: "bottom bottom",
-        ease: "power1.inOut",
-        duration: 1,
+    // if (isPc) {
+    gsap.to(".timeline", {
+      transformOrigin: "bottom bottom",
+      ease: "power1.inOut",
+      duration: 1,
+      scrollTrigger: {
+        trigger: ".timeline",
+        start: "top 80%",
+        end: "70% center",
+        scrub: true,
+        onUpdate: function (self) {
+          gsap.set(".timeline", {
+            scaleY:
+              self.progress === 1 ? 0 : 1 - self.progress * (isPc ? 1 : 0.75),
+          });
+        },
+      },
+    });
+    gsap.utils.toArray(".expText").forEach((item) => {
+      gsap.from(item, {
+        x: 0,
+        opacity: 0,
+        duration: 1.5,
+        ease: "power2.inOut",
         scrollTrigger: {
-          trigger: ".timeline",
+          trigger: item,
           start: "top 80%",
-          end: "70% center",
-          scrub: true,
-          onUpdate: function (self) {
-            gsap.set(".timeline", {
-              scaleY: 1 - self.progress,
-            });
-          },
         },
       });
-      gsap.utils.toArray(".expText").forEach((item) => {
-        gsap.from(item, {
-          x: 0,
-          opacity: 0,
-          duration: 1.5,
-          ease: "power2.inOut",
-          scrollTrigger: {
-            trigger: item,
-            start: "top 80%",
-          },
-        });
-      });
-    }
+    });
+    // }
 
     ScrollTrigger.refresh();
   }, []);
@@ -76,7 +77,7 @@ const Experience = () => {
             {expCards.map((card) => (
               <div key={card.title}>
                 <div className="timeline-wrapper ">
-                  <div className={`timeline ${!isPc && "hidden"}`} />
+                  <div className={`timeline`} />
                   <div className="gradient-line w-1 h-full"></div>
                 </div>
                 <div className="expText flex xl:gap-12 md:gap-18 gap-5 relative z-20">

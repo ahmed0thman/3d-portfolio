@@ -11,7 +11,7 @@ const LazySection = ({ children }) => {
         const rect = sectionRef.current.getBoundingClientRect();
         const windowHeight =
           window.innerHeight || document.documentElement.clientHeight;
-        if (rect.top >= 0 && rect.top <= windowHeight - 200) {
+        if (rect.top <= windowHeight - 200) {
           //   console.log(rect.top, windowHeight);
           setIsVisible(true);
         }

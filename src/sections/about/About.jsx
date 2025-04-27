@@ -151,7 +151,7 @@ const About = () => {
           className="col-span-1  lg:col-span-1 lg:row-span-10 order-3"
         >
           <div className="grid-container">
-            <div className="rounded-3xl w-full sm:h-[326px] h-fit flex justify-center items-center">
+            <div className="relative rounded-3xl w-full sm:h-[326px] h-fit flex justify-center items-center">
               <Globe
                 ref={globeRef}
                 height={336}
@@ -174,6 +174,7 @@ const About = () => {
                 enableRotate={false} // Disable rotation
                 enablePan={false}
               />
+              <span className="absolute inset-0 h-full w-full z-20 lg:hidden"></span>
             </div>
             <div>
               <p className="grid-headtext">
