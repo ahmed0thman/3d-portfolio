@@ -8,41 +8,45 @@ import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import CanvasLoader from "../../components/CanvasLoader";
 import Developer from "./Developer";
+import { useWindowSize } from "../../contexts/windowSizeProvider";
 gsap.registerPlugin(ScrollTrigger);
 
 const Experience = () => {
-  useGSAP(function () {
-    gsap.to(".timeline", {
-      transformOrigin: "bottom bottom",
-      ease: "power1.inOut",
-      duration: 1,
-      scrollTrigger: {
-        trigger: ".timeline",
-        start: "top 80%",
-        end: "70% center",
-        scrub: true,
-        onUpdate: function (self) {
-          gsap.set(".timeline", {
-            scaleY: 1 - self.progress,
-          });
-        },
-      },
-    });
+  const isPc = useWindowSize();
 
-    // gsap.utils.toArray(".expText").forEach((item) => {
-    //   console.log(item);
-    gsap.from(".expText", {
-      x: 0,
-      opacity: 0,
-      duration: 1.5,
-      ease: "power2.inOut",
-      scrollTrigger: {
-        trigger: ".expText",
-        start: "top 80%",
-      },
-    });
-    // });
-    ScrollTrigger.refresh();
+  useGSAP(function () {
+    if (isPc) {
+      gsap.to(".timeline", {
+        transformOrigin: "bottom bottom",
+        ease: "power1.inOut",
+        duration: 1,
+        scrollTrigger: {
+          trigger: ".timeline",
+          start: "top 80%",
+          end: "70% center",
+          scrub: true,
+          onUpdate: function (self) {
+            gsap.set(".timeline", {
+              scaleY: 1 - self.progress,
+            });
+          },
+        },
+      });
+
+      gsap.utils.toArray(".expText").forEach((item) => {
+        gsap.from(".expText", {
+          x: 0,
+          opacity: 0,
+          duration: 1.5,
+          ease: "power2.inOut",
+          scrollTrigger: {
+            trigger: ".expText",
+            start: "top 80%",
+          },
+        });
+      });
+      ScrollTrigger.refresh();
+    }
   }, []);
   return (
     <section
@@ -57,7 +61,7 @@ const Experience = () => {
         />
 
         <div className="mt-32 relative flex gap-2">
-          <div className="avatar hidden">
+          {/* <div className="avatar hidden">
             <Canvas>
               <ambientLight intensity={7} />
               <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
@@ -67,12 +71,12 @@ const Experience = () => {
                 <Developer position-y={-1.25} scale={2} />
               </Suspense>
             </Canvas>
-          </div>
+          </div> */}
           <div className="relative flex-grow h-fit z-50 xl:space-y-8 space-y-3">
             {expCards.map((card) => (
               <div key={card.title}>
                 <div className="timeline-wrapper ">
-                  <div className="timeline" />
+                  <div className={`timeline ${!isPc && "!hidden"}`} />
                   <div className="gradient-line w-1 h-full"></div>
                 </div>
                 <div className="expText flex xl:gap-12 md:gap-18 gap-5 relative z-20">

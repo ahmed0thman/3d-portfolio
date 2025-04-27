@@ -3,25 +3,31 @@ import { abilities } from "../../consts";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
+import { useWindowSize } from "../../contexts/windowSizeProvider";
 gsap.registerPlugin(ScrollTrigger);
 
 const FeatureCards = () => {
+  const isPc = useWindowSize();
   useGSAP(function () {
-    const cards = gsap.utils.toArray(".feature-card").forEach((card, index) => {
-      gsap.from(card, {
-        xPercent: -100 * (index + 1),
-        opacity: 0,
-        transformOrigin: "left left",
-        duration: 1,
-        delay: (index + 1) * 0.4,
-        ease: "power2.inOut",
-        scrollTrigger: {
-          trigger: card,
-          start: "top bottom-=10",
-        },
-      });
-    });
-    ScrollTrigger.refresh();
+    if (isPc) {
+      const cards = gsap.utils
+        .toArray(".feature-card")
+        .forEach((card, index) => {
+          gsap.from(card, {
+            xPercent: -100 * (index + 1),
+            opacity: 0,
+            transformOrigin: "left left",
+            duration: 1,
+            delay: (index + 1) * 0.4,
+            ease: "power2.inOut",
+            scrollTrigger: {
+              trigger: card,
+              start: "top bottom-=10",
+            },
+          });
+        });
+      ScrollTrigger.refresh();
+    }
   }, []);
   return (
     <section className="w-full c-space my-20">

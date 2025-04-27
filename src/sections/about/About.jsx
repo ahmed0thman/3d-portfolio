@@ -33,8 +33,8 @@ const About = () => {
         {
           opacity: 1,
           y: 0,
-          duration: 0.7,
-          delay: (index + 1) * 0.5,
+          duration: 0.5,
+          delay: (index + 1) * 0.2,
           scrollTrigger: {
             trigger: grid,
             start: "top bottom-=150",

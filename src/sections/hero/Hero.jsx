@@ -13,6 +13,7 @@ import HeroCamera from "../../components/HeroCamera";
 import Button from "../../components/Button";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import { useWindowSize } from "../../contexts/windowSizeProvider";
 
 const Hero = () => {
   const isSmall = useMediaQuery({ maxWidth: 440 });

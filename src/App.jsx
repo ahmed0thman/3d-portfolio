@@ -8,20 +8,23 @@ import Skills from "./sections/skills/Skills";
 import Projects from "./sections/projects/Projects";
 import Contact from "./sections/contact/contact";
 import Footer from "./sections/footer/Footer";
+import WindowSizeProvider from "./contexts/windowSizeProvider";
 
 const App = () => {
   return (
-    <main className="max-w-7xl mx-auto overflow-hidden">
-      <Navbar />
-      <Hero />
-      <About />
-      <FeatureCards />
-      <Experience />
-      <Skills />
-      <Projects />
-      <Contact />
-      <Footer />
-    </main>
+    <WindowSizeProvider>
+      <main className="max-w-7xl mx-auto overflow-hidden">
+        <Navbar />
+        <Hero />
+        <About />
+        <FeatureCards />
+        <Experience />
+        <Skills />
+        <Projects />
+        <Contact />
+        <Footer />
+      </main>
+    </WindowSizeProvider>
   );
 };
 
