@@ -5,13 +5,11 @@ import useAlert from "./useAlert";
 import Alert from "./Alert";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import { useWindowSize } from "../../contexts/windowSizeProvider";
 
 const Contact = () => {
-  // service_1caqvgd
-  // template_f6izeyf
-  //    6wCitLzpoPxchmg_2
   const formRef = useRef();
-
+  const isPc = useWindowSize();
   const { alert, showAlert, hideAlert } = useAlert();
   const [loading, setLoading] = useState(false);
 
@@ -71,20 +69,22 @@ const Contact = () => {
   };
 
   useGSAP(function () {
-    gsap.fromTo(
-      "#contact",
-      { opacity: 0, zoom: 0 },
-      {
-        opacity: 1,
-        zoom: 0,
-        duration: 1.3,
-        ease: "sine.in",
-        scrollTrigger: {
-          trigger: "#contact",
-          start: "top center",
-        },
-      }
-    );
+    if (isPc) {
+      gsap.fromTo(
+        "#contact",
+        { opacity: 0, zoom: 0 },
+        {
+          opacity: 1,
+          zoom: 0,
+          duration: 1.3,
+          ease: "sine.in",
+          scrollTrigger: {
+            trigger: "#contact",
+            start: "top center",
+          },
+        }
+      );
+    }
   }, []);
 
   return (

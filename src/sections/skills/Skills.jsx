@@ -5,24 +5,28 @@ import { div } from "three/tsl";
 import SkillModel from "./SkillModel";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import { useWindowSize } from "../../contexts/windowSizeProvider";
 
 const Skills = () => {
+  const isPc = useWindowSize();
   useGSAP(function () {
-    gsap.fromTo(
-      ".tech-card",
-      { y: 50, opacity: 0 },
-      {
-        y: 0,
-        opacity: 1,
-        duration: 1,
-        ease: "power2.inOut",
-        stagger: 0.2,
-        scrollTrigger: {
-          trigger: "#skills",
-          start: "top center",
-        },
-      }
-    );
+    if (isPc) {
+      gsap.fromTo(
+        ".tech-card",
+        { y: 50, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 1,
+          ease: "power2.inOut",
+          stagger: 0.2,
+          scrollTrigger: {
+            trigger: "#skills",
+            start: "top center",
+          },
+        }
+      );
+    }
   }, []);
 
   return (

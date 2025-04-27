@@ -4,6 +4,7 @@ import Button from "../../components/Button";
 import { gsap } from "gsap/gsap-core";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
+import { useWindowSize } from "../../contexts/windowSizeProvider";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -16,8 +17,10 @@ const About = () => {
   const grid4Ref = useRef();
   const grid5Ref = useRef();
   const [hasCopied, setHasCopied] = useState(false);
+  const isPc = useWindowSize();
 
   useGSAP(() => {
+    if (!isPc) return;
     const grids = [
       grid1Ref.current,
       grid2Ref.current,
