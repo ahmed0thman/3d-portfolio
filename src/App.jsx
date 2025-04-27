@@ -8,7 +8,7 @@ import Skills from "./sections/skills/Skills";
 import Projects from "./sections/projects/Projects";
 import Contact from "./sections/contact/contact";
 import Footer from "./sections/footer/Footer";
-import WindowSizeProvider from "./contexts/windowSizeProvider";
+import WindowSizeProvider from "./contexts/WindowSizeProvider";
 
 const App = () => {
   return (
