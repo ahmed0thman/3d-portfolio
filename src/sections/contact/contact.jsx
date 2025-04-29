@@ -1,15 +1,11 @@
 import emailjs from "@emailjs/browser";
 import { useRef, useState } from "react";
-
+import { motion } from "motion/react";
 import useAlert from "./useAlert";
 import Alert from "./Alert";
-import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
-import { useWindowSize } from "../../contexts/WindowSizeProvider";
 
 const Contact = () => {
   const formRef = useRef();
-  const isPc = useWindowSize();
   const { alert, showAlert, hideAlert } = useAlert();
   const [loading, setLoading] = useState(false);
 
@@ -68,25 +64,21 @@ const Contact = () => {
       );
   };
 
-  useGSAP(function () {
-    gsap.fromTo(
-      "#contact",
-      { opacity: 0, zoom: 0 },
-      {
-        opacity: 1,
-        zoom: 0,
-        duration: 1.3,
-        ease: "sine.in",
-        scrollTrigger: {
-          trigger: "#contact",
-          start: "top center",
-        },
-      }
-    );
-  }, []);
-
   return (
-    <section className="c-space my-20" id="contact">
+    <motion.section
+      initial={{ opacity: 0, scale: 1.1 }}
+      whileInView={{
+        opacity: 1,
+        scale: 1,
+        transition: {
+          duration: 1,
+          delay: 0.5,
+          easings: ["circInOut"],
+        },
+      }}
+      className="c-space my-20"
+      id="contact"
+    >
       {alert.show && <Alert {...alert} />}
 
       <div
@@ -183,7 +175,7 @@ const Contact = () => {
           </form>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

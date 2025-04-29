@@ -11,11 +11,11 @@ import Cube from "../../components/Cube";
 import Rings from "../../components/Rings";
 import HeroCamera from "../../components/HeroCamera";
 import Button from "../../components/Button";
-import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
+import { motion } from "motion/react";
 import { useWindowSize } from "../../contexts/WindowSizeProvider";
 
 const Hero = () => {
+  const isXSmall = useMediaQuery({ maxWidth: 405 });
   const isSmall = useMediaQuery({ maxWidth: 440 });
   const isMobile = useMediaQuery({ minWidth: 441, maxWidth: 768 });
   const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1024 });
@@ -23,24 +23,29 @@ const Hero = () => {
 
   const sized = calculateSizes(isSmall, isMobile, isTablet);
 
-  useGSAP(() => {
-    gsap.fromTo(
-      ".hero_tag span.block",
-      { opacity: 0, y: 50 },
-      { opacity: 1, y: 0, duration: 2.5, stagger: 0.35, ease: "power2.inOut" }
-    );
-  });
   return (
     <section className="min-h-screen w-full flex flex-col mt-[120px] lg:mt-0">
-      <div className="w-full mx-auto flex flex-col sm:mt-[112px] mt-20 px-3 sm:c-space gap-3 md:gap-6">
+      <div className="w-full mx-auto flex flex-col sm:mt-[112px] mt-20 px-5 sm:px-10 sm:c-space gap-3 md:gap-6">
         <p className="sm:text-xl text-xs font-medium text-white-800 text-center font-generalsans">
           <span className="mx-1 uppercase">
             Dynamic Web Magic with React.js
           </span>
           <span className="waving-hand">👋</span>
         </p>
-        <p className="hero_tag hero-layout space-y-2">
-          <span className="block text-gray-gradient">
+        <p
+          className={`hero_tag hero-layout space-y-2 ${
+            isXSmall ? "!text-[2rem]" : ""
+          }`}
+        >
+          <motion.span
+            initial={{ opacity: 0, y: 50 }}
+            animate={{
+              opacity: 1,
+              y: 0,
+              transition: { duration: 1.5, easings: ["easeInOut"], delay: 0.2 },
+            }}
+            className="block text-gray-gradient"
+          >
             <span className=" sm:ms-[-10rem]">Shaping</span>
             <span className="slide">
               <span className="wrapper">
@@ -61,10 +66,29 @@ const Hero = () => {
                 ))}
               </span>
             </span>
-          </span>
-          <span className="block text-gray-gradient">
-            into Real Projects that Deliver Results
-          </span>
+          </motion.span>
+          <motion.span
+            initial={{ opacity: 0, y: 50 }}
+            animate={{
+              opacity: 1,
+              y: 0,
+              transition: { duration: 1.5, easings: ["easeInOut"], delay: 0.3 },
+            }}
+            className="block text-gray-gradient"
+          >
+            into Real Projects
+          </motion.span>
+          <motion.span
+            initial={{ opacity: 0, y: 50 }}
+            animate={{
+              opacity: 1,
+              y: 0,
+              transition: { duration: 1.5, easings: ["easeInOut"], delay: 0.5 },
+            }}
+            className="block text-gray-gradient"
+          >
+            that Deliver Results
+          </motion.span>
         </p>
       </div>
       {isPC && (

@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import TitleHeader from "../../components/TitleHeader";
 import { myProjects } from "../../consts";
-import { div } from "three/tsl";
 import ProjectCard from "./ProjectCard";
 
 const Projects = () => {

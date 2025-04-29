@@ -1,31 +1,29 @@
 import React from "react";
 import TitleHeader from "../../components/TitleHeader";
 import { techStackIcons } from "../../consts";
-import { div } from "three/tsl";
 import SkillModel from "./SkillModel";
-import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
+import { motion } from "motion/react";
 import { useWindowSize } from "../../contexts/WindowSizeProvider";
 
 const Skills = () => {
   const isPc = useWindowSize();
-  useGSAP(function () {
-    gsap.fromTo(
-      ".tech-card",
-      { y: 50, opacity: 0 },
-      {
-        y: 0,
-        opacity: 1,
-        duration: 1,
-        ease: "power2.inOut",
-        stagger: 0.2,
-        scrollTrigger: {
-          trigger: "#skills",
-          start: "top center",
-        },
-      }
-    );
-  }, []);
+  // useGSAP(function () {
+  //   gsap.fromTo(
+  //     ".tech-card",
+  //     { y: 50, opacity: 0 },
+  //     {
+  //       y: 0,
+  //       opacity: 1,
+  //       duration: 1,
+  //       ease: "power2.inOut",
+  //       stagger: 0.2,
+  //       scrollTrigger: {
+  //         trigger: "#skills",
+  //         start: "top center",
+  //       },
+  //     }
+  //   );
+  // }, []);
 
   return (
     <section id="skills" className="mx-6 xl:mx-4 my-20">
@@ -37,7 +35,17 @@ const Skills = () => {
 
       <div className="grid xl:grid-cols-6 md:grid-cols-3 grid-cols-2 xl:gap-4 md:gap-4 gap-3 my-24 h-fit">
         {techStackIcons.map((icon, key) => (
-          <div
+          <motion.div
+            initial={{ y: 50, opacity: 0 }}
+            whileInView={{
+              y: 0,
+              opacity: 1,
+              transition: {
+                duration: 1,
+                easings: ["easeInOut"],
+                delay: key * 0.2 + 0.25,
+              },
+            }}
             key={`skill-${key}`}
             className="tech-card card-border lg:!h-[350px] overflow-hidden xl:rounded-full rounded-lg group"
           >
@@ -50,7 +58,7 @@ const Skills = () => {
                 <p>{icon.name}</p>
               </div>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </section>

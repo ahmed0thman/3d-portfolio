@@ -1,54 +1,28 @@
-import React, { Suspense } from "react";
+import React, { useRef, useState } from "react";
 import TitleHeader from "../../components/TitleHeader";
 import { expCards } from "../../consts";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useGSAP } from "@gsap/react";
-import { Canvas } from "@react-three/fiber";
-import { OrbitControls } from "@react-three/drei";
-import CanvasLoader from "../../components/CanvasLoader";
-import Developer from "./Developer";
+import {
+  motion,
+  useMotionValueEvent,
+  useScroll,
+  useTransform,
+} from "motion/react";
 import { useWindowSize } from "../../contexts/WindowSizeProvider";
-gsap.registerPlugin(ScrollTrigger);
 
 const Experience = () => {
   const isPc = useWindowSize();
+  const sectionRef = useRef();
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start 80%", "end center"],
+  });
+  // const [scaleY, setScaleY] = useState(1);
+  const scaleY = useTransform(scrollYProgress, [0, 1], [1, 0]);
+  // useMotionValueEvent(scrollYProgress, "change", (latest) => {
+  //   console.log(1 - latest);
+  //   // setScaleY(1 - latest);
+  // });
 
-  useGSAP(function () {
-    // if (isPc) {
-    gsap.to(".timeline", {
-      transformOrigin: "bottom bottom",
-      ease: "power1.inOut",
-      duration: 1,
-      scrollTrigger: {
-        trigger: ".timeline",
-        start: "top 80%",
-        end: "70% center",
-        scrub: true,
-        onUpdate: function (self) {
-          gsap.set(".timeline", {
-            scaleY:
-              self.progress === 1 ? 0 : 1 - self.progress * (isPc ? 1 : 0.75),
-          });
-        },
-      },
-    });
-    gsap.utils.toArray(".expText").forEach((item) => {
-      gsap.from(item, {
-        x: 0,
-        opacity: 0,
-        duration: 1.5,
-        ease: "power2.inOut",
-        scrollTrigger: {
-          trigger: item,
-          start: "top 80%",
-        },
-      });
-    });
-    // }
-
-    ScrollTrigger.refresh();
-  }, []);
   return (
     <section
       id="experience"
@@ -61,26 +35,33 @@ const Experience = () => {
           icon="💼"
         />
 
-        <div className="mt-32 relative flex gap-2">
-          {/* <div className="avatar">
-            <Canvas>
-              <ambientLight intensity={7} />
-              <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
-              <directionalLight position={[10, 10, 10]} intensity={1} />
-              <OrbitControls enableZoom={false} maxPolarAngle={Math.PI / 2} />
-              <Suspense fallback={<CanvasLoader />}>
-                <Developer position-y={-1.25} scale={2} />
-              </Suspense>
-            </Canvas>
-          </div> */}
+        <div ref={sectionRef} className="mt-32 relative flex gap-2">
           <div className="relative flex-grow h-fit z-50 xl:space-y-8 space-y-3">
             {expCards.map((card) => (
               <div key={card.title}>
                 <div className="timeline-wrapper ">
-                  <div className={`timeline`} />
+                  <motion.div
+                    style={{
+                      transformOrigin: "bottom",
+                      scaleY: scaleY,
+                    }}
+                    className={`timeline`}
+                  ></motion.div>
                   <div className="gradient-line w-1 h-full"></div>
                 </div>
-                <div className="expText flex xl:gap-12 md:gap-18 gap-5 relative z-20">
+                <motion.div
+                  initial={{ y: 100, opacity: 0 }}
+                  whileInView={{
+                    y: 0,
+                    opacity: 1,
+                    transition: {
+                      duration: 1,
+                      delay: 0.25,
+                      easings: ["easeInOut"],
+                    },
+                  }}
+                  className="expText flex xl:gap-12 md:gap-18 gap-5 relative z-20"
+                >
                   <div className="timeline-logo">
                     <img src={card.logoPath} alt="logo" />
                   </div>
@@ -100,7 +81,7 @@ const Experience = () => {
                       ))}
                     </ul>
                   </div>
-                </div>
+                </motion.div>
               </div>
             ))}
           </div>

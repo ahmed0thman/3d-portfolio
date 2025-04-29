@@ -1,52 +1,13 @@
 import React, { useEffect, useRef, useState } from "react";
 import Globe from "react-globe.gl";
 import Button from "../../components/Button";
-import { gsap } from "gsap/gsap-core";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useGSAP } from "@gsap/react";
 import { useWindowSize } from "../../contexts/WindowSizeProvider";
-
-gsap.registerPlugin(ScrollTrigger);
+import { motion } from "motion/react";
 
 const About = () => {
   const globeRef = useRef();
-  const aboutRef = useRef();
-  const grid1Ref = useRef();
-  const grid2Ref = useRef();
-  const grid3Ref = useRef();
-  const grid4Ref = useRef();
-  const grid5Ref = useRef();
   const [hasCopied, setHasCopied] = useState(false);
   const isPc = useWindowSize();
-
-  useGSAP(() => {
-    const grids = [
-      grid1Ref.current,
-      grid2Ref.current,
-      grid3Ref.current,
-      grid4Ref.current,
-      grid5Ref.current,
-    ];
-
-    grids.forEach((grid, index) => {
-      gsap.fromTo(
-        grid,
-        { opacity: 0, y: 50 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.5,
-          delay: (index + 1) * 0.2,
-          scrollTrigger: {
-            trigger: grid,
-            start: "top bottom-=150",
-          },
-        }
-      );
-    });
-
-    gsap.fromTo(aboutRef.current, { opacity: 0 }, { opacity: 1, duration: 2 });
-  }, []);
 
   useEffect(() => {
     if (globeRef.current) {
@@ -89,13 +50,25 @@ const About = () => {
   }
   return (
     <section id="about" className="c-space lg:my-20">
-      <div
-        ref={aboutRef}
+      <motion.div
         id="about"
         className="grid lg:grid-cols-3 xl:grid-rows-13 md:grid-cols-2 grid-cols-1 gap-5 h-full"
         onMouseMove={handleMouseMove}
+        initial={{ opacity: 0 }}
+        whileInView={{
+          opacity: 1,
+          transition: { duration: 2, delay: 0.25, delayChildren: 0.5 },
+        }}
       >
-        <div ref={grid1Ref} className="col-span-1 lg:row-span-7 order-1">
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+            transition: { duration: 0.25, delay: isPc ? 0.25 : 0.2 },
+          }}
+          className="col-span-1 lg:row-span-7 order-1"
+        >
           <div className="grid-container">
             <img
               src="/imgs/grid-me.png"
@@ -113,9 +86,17 @@ const About = () => {
               </p>
             </div>
           </div>
-        </div>
+        </motion.div>
 
-        <div ref={grid2Ref} className="col-span-1 lg:row-span-7 order-2">
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+            transition: { duration: 0.75, delay: isPc ? 0.5 : 0.2 },
+          }}
+          className="col-span-1 lg:row-span-7 order-2"
+        >
           <div className="grid-container">
             <img
               src="/imgs/grid-student.png"
@@ -144,36 +125,43 @@ const About = () => {
               </p>
             </div>
           </div>
-        </div>
+        </motion.div>
 
-        <div
-          ref={grid3Ref}
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+            transition: { duration: 0.75, delay: isPc ? 0.7 : 0.2 },
+          }}
           className="col-span-1  lg:col-span-1 lg:row-span-10 order-3"
         >
           <div className="grid-container">
             <div className="relative rounded-3xl w-full sm:h-[326px] h-fit flex justify-center items-center">
-              <Globe
-                ref={globeRef}
-                height={336}
-                width={336}
-                backgroundColor="rgba(0,0,0,0)"
-                backgroundImageOpacity={0.5}
-                showAtmosphere
-                showGraticules
-                globeImageUrl="//unpkg.com/three-globe/example/img/earth-night.jpg"
-                bumpImageUrl="//unpkg.com/three-globe/example/img/earth-topology.png"
-                labelsData={[
-                  {
-                    lat: 30.0444,
-                    lng: 31.2357, // Longitude for Cairo, Egypt
-                    text: "I am Here",
-                  },
-                ]}
-                labelSize={6}
-                enableZoom={false} // Disable zoom
-                enableRotate={false} // Disable rotation
-                enablePan={false}
-              />
+              {isPc && (
+                <Globe
+                  ref={globeRef}
+                  height={336}
+                  width={336}
+                  backgroundColor="rgba(0,0,0,0)"
+                  backgroundImageOpacity={0.5}
+                  showAtmosphere
+                  showGraticules
+                  globeImageUrl="//unpkg.com/three-globe/example/img/earth-night.jpg"
+                  bumpImageUrl="//unpkg.com/three-globe/example/img/earth-topology.png"
+                  labelsData={[
+                    {
+                      lat: 30.0444,
+                      lng: 31.2357, // Longitude for Cairo, Egypt
+                      text: "I am Here",
+                    },
+                  ]}
+                  labelSize={6}
+                  enableZoom={false} // Disable zoom
+                  enableRotate={false} // Disable rotation
+                  enablePan={false}
+                />
+              )}
               <span className="absolute inset-0 h-full w-full z-20 lg:hidden"></span>
             </div>
             <div>
@@ -192,10 +180,15 @@ const About = () => {
               </a>
             </div>
           </div>
-        </div>
+        </motion.div>
 
-        <div
-          ref={grid4Ref}
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+            transition: { duration: 0.75, delay: isPc ? 0.5 : 0.2 },
+          }}
           className="md:col-span-2 lg:row-span-6 order-4 sm:order-last lg:order-4"
         >
           <div className="grid-container">
@@ -214,10 +207,15 @@ const About = () => {
               </p>
             </div>
           </div>
-        </div>
+        </motion.div>
 
-        <div
-          ref={grid5Ref}
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+            transition: { duration: 0.75, delay: isPc ? 0.6 : 0.2 },
+          }}
           className="col-span-1  lg:col-span-1 lg:row-span-3 order-last sm:order-4 lg:order-last"
         >
           <div className="grid-container">
@@ -239,8 +237,8 @@ const About = () => {
               </div>
             </div>
           </div>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </section>
   );
 };

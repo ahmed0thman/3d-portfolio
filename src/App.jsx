@@ -18,27 +18,15 @@ const App = () => {
       <main className="max-w-7xl mx-auto overflow-hidden">
         <Navbar />
         <Hero />
-        <LazySection>
-          <About />
-        </LazySection>
-        <LazySection>
-          <FeatureCards />
-        </LazySection>
-        <LazySection>
-          <Experience />
-        </LazySection>
+        <About />
+        <FeatureCards />
+        <Experience />
         <LazySection>
           <Skills />
         </LazySection>
-        <LazySection>
-          <Projects />
-        </LazySection>
-        <LazySection>
-          <Contact />
-        </LazySection>
-        <LazySection>
-          <Footer />
-        </LazySection>
+        <Projects />
+        <Contact />
+        <Footer />
       </main>
     </WindowSizeProvider>
   );
