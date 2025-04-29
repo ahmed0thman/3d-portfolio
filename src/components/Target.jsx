@@ -1,19 +1,15 @@
 import { useGLTF } from "@react-three/drei";
+import { useFrame } from "@react-three/fiber";
 import React, { useRef } from "react";
-import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
 
 const Target = (props) => {
   const { scene } = useGLTF("/models/target.gltf");
   const targetRef = useRef();
 
-  useGSAP(function () {
-    gsap.to(targetRef.current.position, {
-      y: targetRef.current.position.y + 0.5,
-      duration: 1.5,
-      repeat: -1,
-      yoyo: true,
-    });
+  useFrame(() => {
+    if (targetRef.current) {
+      targetRef.current.position.y += Math.sin(Date.now() * 0.002) * 0.005;
+    }
   });
 
   return (

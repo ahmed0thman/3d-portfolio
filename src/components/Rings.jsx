@@ -1,6 +1,5 @@
-import { useGSAP } from "@gsap/react";
 import { Center, useTexture } from "@react-three/drei";
-import gsap from "gsap";
+import { useFrame } from "@react-three/fiber";
 import { useCallback, useRef } from "react";
 
 const Rings = ({ position }) => {
@@ -13,35 +12,14 @@ const Rings = ({ position }) => {
 
   const texture = useTexture("textures/rings.png");
 
-  useGSAP(
-    () => {
-      if (refList.current.length === 0) return;
+  useFrame(() => {
+    if (refList.current.length === 0) return;
 
-      refList.current.forEach((r) => {
-        r.position.set(position[0], position[1], position[2]);
-      });
-
-      gsap
-        .timeline({
-          repeat: -1,
-          repeatDelay: 0.5,
-        })
-        .to(
-          refList.current.map((r) => r.rotation),
-          {
-            y: `+=${Math.PI * 2}`,
-            x: `-=${Math.PI * 2}`,
-            duration: 2.5,
-            stagger: {
-              each: 0.15,
-            },
-          }
-        );
-    },
-    {
-      dependencies: position,
-    }
-  );
+    refList.current.forEach((r, index) => {
+      r.rotation.y += 0.01 + index * 0.002;
+      r.rotation.x -= 0.01 + index * 0.002;
+    });
+  });
 
   return (
     <Center position={position}>

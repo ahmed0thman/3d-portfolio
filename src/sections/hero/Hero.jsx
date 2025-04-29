@@ -39,7 +39,7 @@ const Hero = () => {
         >
           <motion.span
             initial={{ opacity: 0, y: 50 }}
-            animate={{
+            whileInView={{
               opacity: 1,
               y: 0,
               transition: { duration: 1.5, easings: ["easeInOut"], delay: 0.2 },
