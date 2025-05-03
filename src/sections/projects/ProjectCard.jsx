@@ -25,7 +25,7 @@ const ProjectCard = ({ currentProject, index }) => {
             className="w-full h-96 object-cover rounded-xl"
           />
         </div>
-        <div className="sm:hover:translate-x-3 transition-all duration-200 ease-in-out z-10">
+        <div className="flex-grow h-full sm:hover:translate-x-3 transition-all duration-200 ease-in-out z-10 flex flex-col">
           <div
             className="p-3 backdrop-filter backdrop-blur-3xl w-fit rounded-lg"
             style={currentProject.logoStyle}
@@ -37,14 +37,14 @@ const ProjectCard = ({ currentProject, index }) => {
             />
           </div>
 
-          <div className="flex flex-col gap-5 text-white-600 my-5">
+          <div className="flex flex-col flex-grow gap-5 text-white-600 my-5">
             <p className="text-white text-2xl font-semibold animatedText">
               {currentProject.title}
             </p>
             <p className="animated-text">{currentProject.desc}</p>
             <p className="animated-text">{currentProject.subdesc}</p>
 
-            <div className="flex items-center justify-between flex-wrap gap-5 w-ful">
+            <div className="mt-auto flex items-center justify-between flex-wrap gap-5 w-ful">
               <div className="flex items-center gap-3">
                 {currentProject.tags.map((tag, index) => (
                   <div key={`tag-${index}`} className="tech-logo">
@@ -56,7 +56,7 @@ const ProjectCard = ({ currentProject, index }) => {
                 href={currentProject.href}
                 target="_blank"
                 rel="noreferrer"
-                className="flex hidden items-center gap-2 cursor-pointer text-white-600"
+                className="flex items-center gap-2 cursor-pointer text-white-600"
               >
                 <p>Check Live Site</p>
                 <img

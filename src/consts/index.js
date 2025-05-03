@@ -33,11 +33,11 @@ export const navLinks = [
 
 export const myProjects = [
   {
-    title: "Podcastr - AI Podcast Platform",
-    desc: "Podcastr is a revolutionary Software-as-a-Service platform that transforms the way podcasts are created. With advanced AI-powered features like text-to-multiple-voices functionality, it allows creators to generate diverse voiceovers from a single text input.",
+    title: "GlazePizza - Online Ordering",
+    desc: "A streamlined online ordering platform built for GlazePizza restaurant, designed to offer a fast, mobile-first experience. Customers can easily browse the menu, enter their name, and confirm their location and contact details to place an order—without the need to sign in.",
     subdesc:
-      "Built as a unique Software-as-a-Service app with Next.js 14, Tailwind CSS, TypeScript, Framer Motion and Convex, Podcastr is designed for optimal performance and scalability.",
-    href: "https://www.youtube.com/watch?v=zfAb95tJvZQ",
+      "GlazePizza simplifies the ordering process using React, React Router, Tailwind CSS, Redux, Thunks, and the browser’s Geolocation API. With efficient data loading and navigation, it reduces phone calls, minimizes order errors, and speeds up service, improving both customer satisfaction and staff efficiency.",
+    href: "https://glazepizza.netlify.app/",
     texture: "/textures/project/project1.mp4",
     logo: "/assets/project-logo1.png",
     logoStyle: {
@@ -56,6 +56,11 @@ export const myProjects = [
         path: "/assets/react.svg",
       },
       {
+        id: 4,
+        name: "Redux",
+        path: "/assets/redux.svg",
+      },
+      {
         id: 2,
         name: "TailwindCSS",
         path: "assets/tailwindcss.png",
@@ -65,19 +70,15 @@ export const myProjects = [
         name: "TypeScript",
         path: "/assets/typescript.png",
       },
-      {
-        id: 4,
-        name: "Framer Motion",
-        path: "/assets/framer.png",
-      },
     ],
   },
+
   {
-    title: "LiveDoc - Real-Time Google Docs Clone",
-    desc: "LiveDoc is a powerful collaborative app that elevates the capabilities of real-time document editing. As an enhanced version of Google Docs, It supports millions of collaborators simultaneously, ensuring that every change is captured instantly and accurately.",
+    title: "TheWildOasis - Dashboard",
+    desc: "The Wild Oasis is a luxurious hotel room booking admin dashboard designed to simplify room management and guest scheduling. It provides hotel staff with an intuitive and responsive platform for managing rooms, checking availability, and scheduling guest reservations in real time.",
     subdesc:
-      "With LiveDoc, users can experience the future of collaboration, where multiple contributors work together in real time without any lag, by using Next.js and Liveblocks newest features.",
-    href: "https://www.youtube.com/watch?v=y5vE8y_f_OM",
+      "Built using React, React Query, Styled Components, and Supabase, the app leverages advanced compound component patterns, authentication, and dark mode to create a professional and seamless experience. The integration of real-time updates ensures efficient operations and enhanced guest service.",
+    href: "https://the-wild-oasis.vercel.app/login",
     texture: "/textures/project/project2.mp4",
     logo: "/assets/project-logo2.png",
     logoStyle: {
@@ -97,8 +98,8 @@ export const myProjects = [
       },
       {
         id: 2,
-        name: "TailwindCSS",
-        path: "assets/tailwindcss.png",
+        name: "React Query",
+        path: "assets/react-query.svg",
       },
       {
         id: 3,
@@ -107,17 +108,53 @@ export const myProjects = [
       },
       {
         id: 4,
-        name: "Framer Motion",
-        path: "/assets/framer.png",
+        name: "Supabase",
+        path: "/assets/supabase.svg",
+      },
+    ],
+  },
+
+  {
+    title: "TheWildOasis - Luxury Room Service",
+    desc: "The Wild Oasis customer website delivers a luxurious, mobile-first experience for hotel guests, making it effortless to browse rooms, view availability, and manage their reservations. With a seamless Google sign-up process and a dedicated guest area, it ensures a smooth end-to-end booking journey.",
+    subdesc:
+      "Built using Next.js App Router, React Server Components, Server Actions, and NextAuth for authentication, this modern platform reduces manual bookings, streamlines the reservation process, and enhances the overall guest experience.",
+    href: "https://the-wild-oasis-website.vercel.app/",
+    texture: "/textures/project/project4.mp4",
+    logo: "/assets/project-logo4.png",
+    logoStyle: {
+      backgroundColor: "#0E1F38",
+      border: "0.2px solid #0E2D58",
+      boxShadow: "0px 0px 60px 0px #2F67B64D",
+      themeColor1: "#2F67B64D",
+      themeColor2: "#0E1F38",
+      themeColor3: "#0E2D58",
+    },
+    spotlight: "/assets/spotlight4.png",
+    tags: [
+      {
+        id: 1,
+        name: "Next.js",
+        path: "/assets/next-white.svg",
+      },
+      {
+        id: 2,
+        name: "nextAuth",
+        path: "assets/nextAuth.png",
+      },
+      {
+        id: 3,
+        name: "TypeScript",
+        path: "/assets/typescript.png",
       },
     ],
   },
   {
-    title: "CarePulse - Health Management System",
+    title: "KayanCare - Health Management System",
     desc: "An innovative healthcare platform designed to streamline essential medical processes. It simplifies patient registration, appointment scheduling, and medical record management, providing a seamless experience for both healthcare providers and patients.",
     subdesc:
-      "With a focus on efficiency, CarePulse integrantes complex forms and SMS notifications, by using Next.js, Appwrite, Twillio and Sentry that enhance operational workflows.",
-    href: "https://www.youtube.com/watch?v=lEflo_sc82g",
+      "With a focus on efficiency, KayanCare integrantes complex forms and SMS notifications, by using React.js, React Query and Redux that enhance operational workflows.",
+    href: "https://kayan-portal.netlify.app/",
     texture: "/textures/project/project3.mp4",
     logo: "/assets/project-logo3.png",
     logoStyle: {
@@ -139,61 +176,22 @@ export const myProjects = [
       },
       {
         id: 2,
-        name: "TailwindCSS",
-        path: "assets/tailwindcss.png",
+        name: "ReactQuery",
+        path: "assets/react-query.svg",
+      },
+      {
+        id: 4,
+        name: "Redux Toolkit",
+        path: "/assets/redux.svg",
       },
       {
         id: 3,
         name: "TypeScript",
         path: "/assets/typescript.png",
       },
-      {
-        id: 4,
-        name: "Framer Motion",
-        path: "/assets/framer.png",
-      },
     ],
   },
-  {
-    title: "Horizon - Online Banking Platform",
-    desc: "Horizon is a comprehensive online banking platform that offers users a centralized finance management dashboard. It allows users to connect multiple bank accounts, monitor real-time transactions, and seamlessly transfer money to other users.",
-    subdesc:
-      "Built with Next.js 14 Appwrite, Dwolla and Plaid, Horizon ensures a smooth and secure banking experience, tailored to meet the needs of modern consumers.",
-    href: "https://www.youtube.com/watch?v=PuOVqP_cjkE",
-    texture: "/textures/project/project4.mp4",
-    logo: "/assets/project-logo4.png",
-    logoStyle: {
-      backgroundColor: "#0E1F38",
-      border: "0.2px solid #0E2D58",
-      boxShadow: "0px 0px 60px 0px #2F67B64D",
-      themeColor1: "#2F67B64D",
-      themeColor2: "#0E1F38",
-      themeColor3: "#0E2D58",
-    },
-    spotlight: "/assets/spotlight4.png",
-    tags: [
-      {
-        id: 1,
-        name: "React.js",
-        path: "/assets/react.svg",
-      },
-      {
-        id: 2,
-        name: "TailwindCSS",
-        path: "assets/tailwindcss.png",
-      },
-      {
-        id: 3,
-        name: "TypeScript",
-        path: "/assets/typescript.png",
-      },
-      {
-        id: 4,
-        name: "Framer Motion",
-        path: "/assets/framer.png",
-      },
-    ],
-  },
+
   // {
   //   title: "Imaginify - AI Photo Manipulation App",
   //   desc: "Imaginify is a groundbreaking Software-as-a-Service application that empowers users to create stunning photo manipulations using AI technology. With features like AI-driven image editing, a payments system, and a credits-based model.",
