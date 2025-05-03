@@ -9,7 +9,7 @@ import Projects from "./sections/projects/Projects";
 import Contact from "./sections/contact/contact";
 import Footer from "./sections/footer/Footer";
 import WindowSizeProvider from "./contexts/WindowSizeProvider";
-import LazySection from "./components/LazySection";
+// import LazySection from "./components/LazySection";
 
 const App = () => {
   return (
@@ -21,9 +21,7 @@ const App = () => {
         <About />
         <FeatureCards />
         <Experience />
-        <LazySection>
-          <Skills />
-        </LazySection>
+        <Skills />
         <Projects />
         <Contact />
         <Footer />

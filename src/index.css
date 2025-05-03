@@ -109,7 +109,7 @@ body {
       @apply size-8 md:size-10 object-contain;
     }
     .slide {
-      @apply absolute pt-0 px-2 md:px-5 h-[56px] md:h-[50px] md:translate-y-1 translate-y-0 overflow-hidden;
+      @apply absolute pt-0 px-2 md:px-5 h-[56px] sm:h-[46px] md:h-[50px] md:translate-y-1 translate-y-0 overflow-hidden;
     }
   }
   .slide {
@@ -337,7 +337,7 @@ body {
   } */
 
   .card-border {
-    @apply flex flex-col items-start p-6 gap-4;
+    @apply flex flex-col items-start p-1 md:p-6 gap-4;
     width: calc(100% - 2px);
     height: calc(100% - 2px);
     margin: 1px;
@@ -393,7 +393,7 @@ body {
     @apply w-full flex flex-col md:justify-center items-center xl:gap-5 xl:h-[50vh] overflow-hidden relative z-10 group-hover:cursor-grab;
 
     & p {
-      @apply text-lg 2xl:text-xl pb-5 xl:pb-0 font-semibold text-white text-center;
+      @apply text-lg 2xl:text-xl pb-1 md:pb-5 xl:pb-0 font-semibold text-white text-center;
     }
   }
 

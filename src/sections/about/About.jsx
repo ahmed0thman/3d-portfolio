@@ -50,15 +50,10 @@ const About = () => {
   }
   return (
     <section id="about" className="c-space lg:my-20">
-      <motion.div
+      <div
         id="about"
         className="grid lg:grid-cols-3 xl:grid-rows-13 md:grid-cols-2 grid-cols-1 gap-5 h-full"
         onMouseMove={handleMouseMove}
-        initial={{ opacity: 0 }}
-        whileInView={{
-          opacity: 1,
-          transition: { duration: 2, delay: 0.25, delayChildren: 0.5 },
-        }}
       >
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -238,7 +233,7 @@ const About = () => {
             </div>
           </div>
         </motion.div>
-      </motion.div>
+      </div>
     </section>
   );
 };

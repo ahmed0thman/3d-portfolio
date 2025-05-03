@@ -1,27 +1,24 @@
-import { PerspectiveCamera } from "@react-three/drei";
-import { Canvas } from "@react-three/fiber";
-import React, { Suspense } from "react";
-import HackerRoom from "../../components/HackerRoom";
-import CanvasLoader from "../../components/CanvasLoader";
+import React, { lazy, useEffect, useState } from "react";
+
 import { useMediaQuery } from "react-responsive";
-import { calculateSizes, words } from "../../consts";
-import Target from "../../components/Target";
-import ReactLogo from "../../components/ReactLogo";
-import Cube from "../../components/Cube";
-import Rings from "../../components/Rings";
-import HeroCamera from "../../components/HeroCamera";
+import { words } from "../../consts";
+
 import Button from "../../components/Button";
 import { motion } from "motion/react";
 import { useWindowSize } from "../../contexts/WindowSizeProvider";
+const HeroCanvas = lazy(() => import("./HeroCanvas"));
 
 const Hero = () => {
   const isXSmall = useMediaQuery({ maxWidth: 405 });
-  const isSmall = useMediaQuery({ maxWidth: 440 });
-  const isMobile = useMediaQuery({ minWidth: 441, maxWidth: 768 });
-  const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1024 });
-  const isPC = useWindowSize();
 
-  const sized = calculateSizes(isSmall, isMobile, isTablet);
+  const isPC = useWindowSize();
+  const [showCanvas, setShowCanvas] = useState(false);
+
+  useEffect(function (params) {
+    if (!isPC) return;
+    const timer = setTimeout(() => setShowCanvas(true), 1500);
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <section className="min-h-screen w-full flex flex-col mt-[120px] lg:mt-0">
@@ -67,54 +64,41 @@ const Hero = () => {
               </span>
             </span>
           </motion.span>
-          <motion.span
-            initial={{ opacity: 0, y: 50 }}
-            animate={{
-              opacity: 1,
-              y: 0,
-              transition: { duration: 1.5, easings: ["easeInOut"], delay: 0.3 },
-            }}
-            className="block text-gray-gradient"
-          >
-            into Real Projects
-          </motion.span>
-          <motion.span
-            initial={{ opacity: 0, y: 50 }}
-            animate={{
-              opacity: 1,
-              y: 0,
-              transition: { duration: 1.5, easings: ["easeInOut"], delay: 0.5 },
-            }}
-            className="block text-gray-gradient"
-          >
-            that Deliver Results
-          </motion.span>
+          <span className="sm:flex sm:justify-center sm:gap-1">
+            <motion.span
+              initial={{ opacity: 0, y: 50 }}
+              animate={{
+                opacity: 1,
+                y: 0,
+                transition: {
+                  duration: 1.5,
+                  easings: ["easeInOut"],
+                  delay: 0.3,
+                },
+              }}
+              className="block text-gray-gradient"
+            >
+              into Real Projects
+            </motion.span>
+            <motion.span
+              initial={{ opacity: 0, y: 50 }}
+              animate={{
+                opacity: 1,
+                y: 0,
+                transition: {
+                  duration: 1.5,
+                  easings: ["easeInOut"],
+                  delay: 0.5,
+                },
+              }}
+              className="block text-gray-gradient"
+            >
+              that Deliver Results
+            </motion.span>
+          </span>
         </p>
       </div>
-      {isPC && (
-        <div className="w-full h-full absolute flex-grow inset-0">
-          <Canvas className="w-full h-full flex-grow">
-            <Suspense fallback={<CanvasLoader />}>
-              <PerspectiveCamera makeDefault position={[0, 0, 18]} />
-              <HeroCamera isMobile={isMobile || isSmall}>
-                <HackerRoom
-                  scale={sized.deskScale}
-                  position={sized.deskPosition}
-                  rotation={[0, -Math.PI, 0]}
-                />
-              </HeroCamera>
-              <group>
-                <Target position={sized.targetPosition} />
-                <ReactLogo position={sized.reactLogoPosition} />
-                <Cube position={sized.cubePosition} />
-                <Rings position={sized.ringPosition} />
-              </group>
-              <ambientLight intensity={1} />
-              <directionalLight position={[10, 10, 10]} intensity={0.5} />
-            </Suspense>
-          </Canvas>
-        </div>
-      )}
+      {isPC && showCanvas && <HeroCanvas />}
 
       {!isPC && (
         <div className="">
