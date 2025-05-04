@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Logo from "./Logo";
 import NavItems from "./NavItems";
+import Button from "../../components/Button";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -16,9 +17,10 @@ const Navbar = () => {
             <Logo />
             Ahmed Othman
           </a>
+
           <button
             onClick={handleToggleMenu}
-            className="text-neutral-400 hover:text-white transition-colors focus:outline-none sm:hidden flex"
+            className="text-neutral-400 hover:text-white transition-colors focus:outline-none lg:hidden flex"
             aria-label="Toggle menu"
           >
             <img
@@ -27,7 +29,7 @@ const Navbar = () => {
               className="w-6 h-6 me-4"
             />
           </button>
-          <nav className="sm:flex hidden">
+          <nav className="lg:flex hidden">
             <NavItems />
           </nav>
 

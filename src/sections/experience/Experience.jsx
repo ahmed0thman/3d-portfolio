@@ -63,12 +63,19 @@ const Experience = () => {
                   className="expText flex xl:gap-12 md:gap-18 gap-5 relative z-20"
                 >
                   <div className="timeline-logo">
-                    <img src={card.logoPath} alt="logo" />
+                    <img className="w-14" src={card.logoPath} alt="logo" />
                   </div>
-                  <div className=" md:work-canvas px-8 py-5 flex-grow">
-                    <h1 className="font-semibold text-2xl text-white-800">
+                  <div className=" md:work-canvas p-2 sm:px-8 sm:py-5 flex-grow">
+                    <h1 className="font-semibold flex gap-2 flex-wrap text-2xl text-white-800">
                       {card.title}
+                      <p
+                        style={{ color: card.color }}
+                        className="text-lg font-semibold italic"
+                      >
+                        @ {card.company}
+                      </p>
                     </h1>
+
                     <p className="my-3 text-slate-100 flex gap-2 items-center">
                       <img src="/icons/calender.svg" /> {card.date}
                     </p>

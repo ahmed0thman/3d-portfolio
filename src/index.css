@@ -22,7 +22,7 @@ body {
   }
 
   .nav-ul {
-    @apply flex flex-col items-center gap-4 sm:flex-row md:gap-6 relative z-20;
+    @apply flex flex-col lg:items-center gap-4 lg:flex-row md:gap-6 relative z-20;
   }
 
   .nav-li {
@@ -34,7 +34,7 @@ body {
   }
 
   .nav-sidebar {
-    @apply absolute left-0 right-0 bg-black-200 backdrop-blur-sm transition-all duration-300 ease-in-out overflow-hidden z-20 mx-auto sm:hidden block;
+    @apply absolute left-0 right-0 bg-black-200 backdrop-blur-sm transition-all duration-300 ease-in-out overflow-hidden z-20 mx-auto lg:hidden block;
   }
 
   .text-gray_gradient {
@@ -208,6 +208,7 @@ body {
       animation-name: border-animation;
       animation-duration: 15s;
       animation-iteration-count: infinite;
+      animation-timing-function: linear;
     }
   }
   @keyframes border-animation {
@@ -218,10 +219,10 @@ body {
       transform: translate(370%, -50%);
     }
     50% {
-      transform: translate(370%, 190%);
+      transform: translate(370%, 180%);
     }
     75% {
-      transform: translate(-50%, 190%);
+      transform: translate(-50%, 180%);
     }
     100% {
       transform: translate(-50%, -50%);
@@ -359,7 +360,7 @@ body {
   }
 
   .timeline-logo {
-    @apply md:size-20 size-10 flex-none rounded-full flex justify-center items-center border border-black-100 bg-black-100;
+    @apply md:size-20 size-10 flex-none rounded-full flex justify-center items-center border border-black-100 bg-black-100 -mt-5;
   }
 
   .exp-card-wrapper {

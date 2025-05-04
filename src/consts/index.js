@@ -191,44 +191,6 @@ export const myProjects = [
       },
     ],
   },
-
-  // {
-  //   title: "Imaginify - AI Photo Manipulation App",
-  //   desc: "Imaginify is a groundbreaking Software-as-a-Service application that empowers users to create stunning photo manipulations using AI technology. With features like AI-driven image editing, a payments system, and a credits-based model.",
-  //   subdesc:
-  //     "Built with Next.js 14, Cloudinary AI, Clerk, and Stripe, Imaginify combines cutting-edge technology with a user-centric approach. It can be turned into a side income or even a full-fledged business.",
-  //   href: "https://www.youtube.com/watch?v=Ahwoks_dawU",
-  //   texture: "/textures/project/project5.mp4",
-  //   logo: "/assets/project-logo5.png",
-  //   logoStyle: {
-  //     backgroundColor: "#1C1A43",
-  //     border: "0.2px solid #252262",
-  //     boxShadow: "0px 0px 60px 0px #635BFF4D",
-  //   },
-  //   spotlight: "/assets/spotlight5.png",
-  //   tags: [
-  //     {
-  //       id: 1,
-  //       name: "React.js",
-  //       path: "/assets/react.svg",
-  //     },
-  //     {
-  //       id: 2,
-  //       name: "TailwindCSS",
-  //       path: "assets/tailwindcss.png",
-  //     },
-  //     {
-  //       id: 3,
-  //       name: "TypeScript",
-  //       path: "/assets/typescript.png",
-  //     },
-  //     {
-  //       id: 4,
-  //       name: "Framer Motion",
-  //       path: "/assets/framer.png",
-  //     },
-  //   ],
-  // },
 ];
 
 export const calculateSizes = (isSmall, isMobile, isTablet) => {
@@ -272,42 +234,41 @@ export const calculateSizes = (isSmall, isMobile, isTablet) => {
 
 export const expCards = [
   {
-    review:
-      "Adrian brought creativity and technical expertise to the team, significantly improving our frontend performance. His work has been invaluable in delivering faster experiences.",
-    imgPath: "/imgs/exp1.png",
-    logoPath: "/imgs/logo1.png",
+    company: "Deltana IT",
+    color: "#6d45ce",
+    imgPath: "/imgs/deltana.png",
+    logoPath: "/imgs/deltana.png",
     title: "Frontend Developer",
-    date: "January 2023 - Present",
+    date: "January 2020 - Present",
     responsibilities: [
-      "Developed and maintained user-facing features for the Hostinger website.",
-      "Collaborated closely with UI/UX designers to ensure seamless user experiences.",
-      "Optimized web applications for maximum speed and scalability.",
+      "Developed responsive, high-performance web applications using React.js and Vanilla JavaScript.",
+      "Optimized rendering and bundle size, reducing Largest Contentful Paint (LCP) by 30%.",
+      "Used profiling tools (React Profiler, Chrome DevTools) to identify and eliminate performance bottlenecks, improving rendering efficiency by 25%",
     ],
   },
   {
-    review:
-      "Adrian’s contributions to Docker's web applications have been outstanding. He approaches challenges with a problem-solving mindset.",
-    imgPath: "/imgs/exp2.png",
-    logoPath: "/imgs/logo2.png",
-    title: "Full Stack Developer",
-    date: "June 2020 - December 2023",
+    company: "Soft Zone",
+    color: "#fd5c79",
+    imgPath: "/imgs/softzone.png",
+    logoPath: "/imgs/softzone.png",
+    title: "Frontend Developer",
+    date: "April 2023 - May 2024",
     responsibilities: [
-      "Led the development of Docker's web applications, focusing on scalability.",
-      "Worked with backend engineers to integrate APIs seamlessly with the frontend.",
-      "Contributed to open-source projects that were used with the Docker ecosystem.",
+      "Developed responsive and high-performance web applications, ensuring seamless user experiences across a variety of platforms.",
+      "Collaborated with cross-functional teams to analyze business requirements and design user-centric solutions, contributing to the architecture and implementation of multiple web applications. ",
+      "Focused on performance optimization by reducing load times, improving rendering efficiency, and enhancing the user interface for better interactivity.",
     ],
   },
   {
-    review:
-      "Adrian’s work on Appwrite’s mobile app brought a high level of quality and efficiency. He delivered solutions that enhanced our mobile experience & meet our product goals.",
-    imgPath: "/imgs/exp3.png",
-    logoPath: "/imgs/logo3.png",
-    title: "React Native Developer",
+    company: "Freenlnacer",
+    color: "#52aeff",
+    imgPath: "/imgs/programmer.png",
+    logoPath: "/imgs/programmer.png",
+    title: "Frontend Developer",
     date: "March 2019 - May 2020",
     responsibilities: [
-      "Built cross-platform mobile apps using React Native, integrating with Appwrite's backend services.",
-      "Improved app performance and user experience through code optimization and testing.",
-      "Coordinated with the product team to implement features based on feedback.",
+      "As a self-employed Freelance Software Developer, I provided tailored software solutions to a diverse client, contributing to the successful realization of various projects.",
+      "My responsibilities and accomplishments included analyzing business requirements to efficiently design and plan scalable, reliable, and high-available software.",
     ],
   },
 ];
