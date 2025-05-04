@@ -33,7 +33,7 @@ const Hero = () => {
 
   return (
     <section className="min-h-screen w-full flex flex-col pt-[120px] lg:mt-0">
-      <div className="w-full mx-auto flex flex-col sm:mt-[112px] mt-20 px-5 sm:px-10 sm:c-space gap-3 md:gap-6">
+      <div className="w-full mx-auto flex flex-col sm:mt-[30px] mt-20 px-5 sm:px-10 sm:c-space gap-3 md:gap-6">
         <p className="sm:text-xl text-xs font-medium text-white-800 text-center font-generalsans">
           <span className="mx-1 uppercase">
             Dynamic Web Magic with React.js
