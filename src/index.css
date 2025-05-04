@@ -360,7 +360,7 @@ body {
   }
 
   .timeline-logo {
-    @apply md:size-20 size-10 flex-none rounded-full flex justify-center items-center border border-black-100 bg-black-100 -mt-5;
+    @apply md:size-20 size-10 flex-none rounded-full flex justify-center items-center border border-black-100 bg-black-100 lg:-mt-5;
   }
 
   .exp-card-wrapper {
