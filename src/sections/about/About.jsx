@@ -73,8 +73,8 @@ const About = () => {
             <div>
               <p className="grid-headtext">Hi, I'm Ahmed Othman</p>
               <p className="grid-subtext">
-                With 2+ years of experience in web development, I specialize in
-                Frontend development. I am passionate about creating
+                With 3+ years of experience in web development, I specialize in
+                Frontend and UI development. I am passionate about creating
                 user-friendly and efficient web applications that meet the needs
                 of users and businesses alike. I have a strong background in
                 JavaScript, React, and other modern web technologies.

@@ -74,13 +74,13 @@ export const myProjects = [
   },
 
   {
-    title: "TheWildOasis - Dashboard",
-    desc: "The Wild Oasis is a luxurious hotel room booking admin dashboard designed to simplify room management and guest scheduling. It provides hotel staff with an intuitive and responsive platform for managing rooms, checking availability, and scheduling guest reservations in real time.",
+    title: "Sally Academy (In Progress)",
+    desc: "Sally Academy is a modern, mobile-first learning platform currently in development, aimed at providing students with accessible education through streamlined course delivery and skill certification. Key features include course browsing, enrollment, video lessons, progress tracking, and certificates.",
     subdesc:
-      "Built using React, React Query, Styled Components, and Supabase, the app leverages advanced compound component patterns, authentication, and dark mode to create a professional and seamless experience. The integration of real-time updates ensures efficient operations and enhanced guest service.",
-    href: "https://the-wild-oasis.vercel.app/login",
+      "BI’m contributing to the frontend using Vanilla JavaScript, Bootstrap, and Motion to build a responsive and user-friendly interface. The project is actively evolving to ensure an engaging and efficient learning experience.",
+    href: "https://sallyacademy.netlify.app/",
     texture: "/textures/project/project2.mp4",
-    logo: "/assets/project-logo2.png",
+    logo: "/assets/sally.svg",
     logoStyle: {
       backgroundColor: "#13202F",
       border: "0.2px solid #17293E",
@@ -93,33 +93,29 @@ export const myProjects = [
     tags: [
       {
         id: 1,
-        name: "React.js",
-        path: "/assets/react.svg",
+        name: "JavaScript",
+        path: "assets/js.svg",
       },
       {
         id: 2,
-        name: "React Query",
-        path: "assets/react-query.svg",
+        name: "Bootstrap",
+        path: "/assets/bootstrap.svg",
       },
+
       {
         id: 3,
-        name: "TypeScript",
-        path: "/assets/typescript.png",
-      },
-      {
-        id: 4,
-        name: "Supabase",
-        path: "/assets/supabase.svg",
+        name: "Framer Motion",
+        path: "/icons/framer.png",
       },
     ],
   },
 
   {
-    title: "TheWildOasis - Luxury Room Service",
-    desc: "The Wild Oasis customer website delivers a luxurious, mobile-first experience for hotel guests, making it effortless to browse rooms, view availability, and manage their reservations. With a seamless Google sign-up process and a dedicated guest area, it ensures a smooth end-to-end booking journey.",
+    title: "TheWildRoom - Luxury Room Service",
+    desc: "The Wild Room customer website delivers a luxurious, mobile-first experience for hotel guests, making it effortless to browse rooms, view availability, and manage their reservations. With a seamless Google sign-up process and a dedicated guest area, it ensures a smooth end-to-end booking journey.",
     subdesc:
       "Built using Next.js App Router, React Server Components, Server Actions, and NextAuth for authentication, this modern platform reduces manual bookings, streamlines the reservation process, and enhances the overall guest experience.",
-    href: "https://the-wild-oasis-website.vercel.app/",
+    href: "https://the-wild-room.netlify.app/",
     texture: "/textures/project/project4.mp4",
     logo: "/assets/project-logo4.png",
     logoStyle: {
@@ -239,7 +235,7 @@ export const expCards = [
     imgPath: "/imgs/deltana.png",
     logoPath: "/imgs/deltana.png",
     title: "Frontend Developer",
-    date: "January 2020 - Present",
+    date: "January 2022 - Present",
     responsibilities: [
       "Developed responsive, high-performance web applications using React.js and Vanilla JavaScript.",
       "Optimized rendering and bundle size, reducing Largest Contentful Paint (LCP) by 30%.",
@@ -260,12 +256,12 @@ export const expCards = [
     ],
   },
   {
-    company: "Freenlnacer",
+    company: "Freelancer",
     color: "#52aeff",
     imgPath: "/imgs/programmer.png",
     logoPath: "/imgs/programmer.png",
     title: "Frontend Developer",
-    date: "March 2019 - May 2020",
+    date: "March 2019 - present",
     responsibilities: [
       "As a self-employed Freelance Software Developer, I provided tailored software solutions to a diverse client, contributing to the successful realization of various projects.",
       "My responsibilities and accomplishments included analyzing business requirements to efficiently design and plan scalable, reliable, and high-available software.",
