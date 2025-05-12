@@ -111,41 +111,6 @@ export const myProjects = [
   },
 
   {
-    title: "TheWildRoom - Luxury Room Service",
-    desc: "The Wild Room customer website delivers a luxurious, mobile-first experience for hotel guests, making it effortless to browse rooms, view availability, and manage their reservations. With a seamless Google sign-up process and a dedicated guest area, it ensures a smooth end-to-end booking journey.",
-    subdesc:
-      "Built using Next.js App Router, React Server Components, Server Actions, and NextAuth for authentication, this modern platform reduces manual bookings, streamlines the reservation process, and enhances the overall guest experience.",
-    href: "https://the-wild-room.netlify.app/",
-    texture: "/textures/project/project4.mp4",
-    logo: "/assets/project-logo4.png",
-    logoStyle: {
-      backgroundColor: "#0E1F38",
-      border: "0.2px solid #0E2D58",
-      boxShadow: "0px 0px 60px 0px #2F67B64D",
-      themeColor1: "#2F67B64D",
-      themeColor2: "#0E1F38",
-      themeColor3: "#0E2D58",
-    },
-    spotlight: "/assets/spotlight4.png",
-    tags: [
-      {
-        id: 1,
-        name: "Next.js",
-        path: "/assets/next-white.svg",
-      },
-      {
-        id: 2,
-        name: "nextAuth",
-        path: "assets/nextAuth.png",
-      },
-      {
-        id: 3,
-        name: "TypeScript",
-        path: "/assets/typescript.png",
-      },
-    ],
-  },
-  {
     title: "KayanCare - Health Management System",
     desc: "An innovative healthcare platform designed to streamline essential medical processes. It simplifies patient registration, appointment scheduling, and medical record management, providing a seamless experience for both healthcare providers and patients.",
     subdesc:
@@ -179,6 +144,41 @@ export const myProjects = [
         id: 4,
         name: "Redux Toolkit",
         path: "/assets/redux.svg",
+      },
+      {
+        id: 3,
+        name: "TypeScript",
+        path: "/assets/typescript.png",
+      },
+    ],
+  },
+  {
+    title: "TheWildRoom - Luxury Room Service",
+    desc: "The Wild Room customer website delivers a luxurious, mobile-first experience for hotel guests, making it effortless to browse rooms, view availability, and manage their reservations. With a seamless Google sign-up process and a dedicated guest area, it ensures a smooth end-to-end booking journey.",
+    subdesc:
+      "Built using Next.js App Router, React Server Components, Server Actions, and NextAuth for authentication, this modern platform reduces manual bookings, streamlines the reservation process, and enhances the overall guest experience.",
+    href: "https://the-wild-room.netlify.app/",
+    texture: "/textures/project/project4.mp4",
+    logo: "/assets/project-logo4.png",
+    logoStyle: {
+      backgroundColor: "#0E1F38",
+      border: "0.2px solid #0E2D58",
+      boxShadow: "0px 0px 60px 0px #2F67B64D",
+      themeColor1: "#2F67B64D",
+      themeColor2: "#0E1F38",
+      themeColor3: "#0E2D58",
+    },
+    spotlight: "/assets/spotlight4.png",
+    tags: [
+      {
+        id: 1,
+        name: "Next.js",
+        path: "/assets/next-white.svg",
+      },
+      {
+        id: 2,
+        name: "nextAuth",
+        path: "assets/nextAuth.png",
       },
       {
         id: 3,
