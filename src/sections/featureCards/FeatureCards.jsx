@@ -30,7 +30,7 @@ const FeatureCards = () => {
               "--animation-delay": `${(index + 1) * 2}s`,
             }}
           >
-            <div className="card-border rounded-xl padding-8 flex flex-col gap-4">
+            <div className="card-border rounded-xl !px-4 !py-3 flex flex-col gap-4">
               <div className="siz-14 flex items-center justify-center rounded-full">
                 <img src={imgPath} alt="" />
               </div>
